@@ -1,0 +1,9 @@
+fk5
+circle(24.50990183, -21.92601304, 0.2") # text={g1.1} color=magenta
+circle(24.51320906, -21.92990322, 0.2") # text={g1.2} color=magenta
+circle(24.51642037, -21.93032639, 0.2") # text={g1.3} color=magenta
+circle(24.51761179, -21.92334337, 0.2") # text={g1.4} color=magenta
+circle(24.51007534, -21.92734181, 0.2") # text={1.1 } color=green
+circle(24.51231984, -21.92978758, 0.2") # text={1.2 } color=green
+circle(24.51512533, -21.93066599, 0.2") # text={1.3 } color=green
+                             
