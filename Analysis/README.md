@@ -1,3 +1,5 @@
+Python scripts in [./mrg/](https://github.com/gbrammer/mrg0138_supernova/tree/master/Analysis/mrg)
+
 CHArGE Imaging Data
 -------------------
 
