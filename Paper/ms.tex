@@ -1,0 +1,139 @@
+\documentclass[twocolumn]{aastex63}
+\usepackage{apjfonts}
+
+\usepackage{lipsum}  
+
+%\received{\today}
+%\revised{\today}
+%\accepted{\today}
+%% Command to document which AAS Journal the manuscript was submitted to.
+%% Adds "Submitted to " the argument.
+%\submitjournal{AJ}
+
+%\topmargin 0.6in
+
+\usepackage{multirow}
+
+%\usepackage{deluxetable}
+%\usepackage{color}
+%\usepackage[usenames, dvipsnames]{color}
+%\definecolor{citeRGB}{rgb}{0,0.1,0.7}
+%\usepackage[hyperfootnotes=true,naturalnames=true,letterpaper,pdfstartview=FitH,pdfpagemode=UseNone,colorlinks=true,citecolor=citeRGB]{hyperref}
+
+\gdef\HST{\textit{HST}}
+\gdef\Spitzer{\textit{Spitzer}}
+\gdef\fluxcgs{\mathrm{erg~s^{-1}~cm^{-2}}}
+\gdef\micront{$\mu$m}
+\gdef\micronm{\mu\mathrm{m}}
+\gdef\aXe{\texttt{aXe}}
+\gdef\flux_radius{\textsc{flux\_radius}}
+\gdef\epers{\textit{e}$^{-}$ s$^{-1}$}
+
+\gdef\logOH{12 + \log \left(\mathrm{O/H}\right)}
+\gdef\SFRuvir{SFR_\mathrm{UV+IR}}
+\gdef\peryr{\mathrm{yr}^{-1}}
+\gdef\kms{km\,s$^{-1}$}
+\gdef\mum{$\mu\mathrm{m}$}
+\gdef\24mum{$24\,\mu\mathrm{m}$}
+\gdef\arcsec{^{\prime\prime}}
+\gdef\UDFj{UDFj-39546284}
+\gdef\compareID{UDF-40106456}
+\gdef\Lya{\mathrm{Ly}\alpha}
+\gdef\Halpha{\mathrm{H}\alpha}
+\gdef\Hbeta{\mathrm{H}\beta}
+
+\newcommand\xxx{{\textcolor{red}{\bf xxx}}}
+\newcommand\xref[1]{{\textcolor{red}{\bf (REF #1)}}}
+\newcommand\XXX[1]{{\textcolor{red}{xxx #1}}}
+
+\gdef\HAWKI{\mbox{HAWK-I}}
+
+\gdef\sncode{\mbox{ABC}}
+
+\shortauthors{Brammer et al.}
+\shorttitle{CHArGE}
+% \setwatermarkfontsize{50pt} 
+%\citestyle{aa}
+\begin{document}
+
+\title{SN-\sncode: A Gravitationally-Lensed Type Ia Supernova Candidate at $z=1.9$}
+
+% \footnotetext[*]{Based on observations made with the NASA/ESA \textit{Hubble
+% Space Telescope}, programs GO-11640, 12177 and 12328, obtained at the
+% Space Telescope Science Institute, which is operated by the Association of
+% Universities for Research in Astronomy, Inc., under NASA contract NAS
+% 5-26555.}
+
+\correspondingauthor{Gabriel Brammer}
+\email{gabriel.brammer@nbi.ku.dk}
+
+\author[0000-0003-2680-005X]{Gabriel Brammer}
+\affiliation{The Cosmic Dawn Center, University of Copenhagen, Vibenshuset, Lyngbyvej 2, DK-2100 Copenhagen, Denmark}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%  Abstract
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{abstract}
+
+We report the discovery of a gravitationally-lensed, multiply-imaged transient source with a likely host at $z=1.905$, observed in archival \textit{Hubble Space Telescope} near-infrared imaging observations.  
+
+\end{abstract}
+\keywords{supernovae: individual SN-\sncode --- gravitational lensing: strong --- galaxies: evolution --- galaxies: high-redshift}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%% Introduction
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+\label{s:introduction}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%% Archival data summary
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Observations}
+\label{s:observations}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%  Lens model
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Strong Lensing Analysis}
+\label{s:lensing}
+
+\subsection{Multiple images}
+\label{ss:images}
+
+\subsection{Time delay}
+\label{ss:timedelay}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%  SN Classification
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Transient Classification}
+\label{s:classifiation}
+
+\subsection{Light curve analysis}
+\label{ss:lightcurve}
+
+\subsection{Host galaxy properties}
+\label{ss:host}
+
+Discussion from \cite{Newman2018a} and \cite{Newman2018b}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%  Discussion & Conclusions
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Discussion}
+\label{s:discussion}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%  End things
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\acknowledgments
+
+\bibliography{ms}{}
+\bibliographystyle{aasjournal}
+
+Software acknowledgements: astropy, scipy, matplotlib, sep, astroquery, shapely
+
+The Cosmic Dawn Center (DAWN) is funded by the Danish National Research Foundation under grant No. 140. 
+
+\end{document}

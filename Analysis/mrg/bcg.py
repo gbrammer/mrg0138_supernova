@@ -138,3 +138,12 @@ def bcg_surface_brightness():
     fig.tight_layout(pad=0.5)
     
     fig.savefig('sn_image_{0}_mu.png'.format(img))
+
+def ellipse_fit():
+    pass
+    
+def _ellipse(R, q, phi):
+    xp = R*np.cos(theta)*np.cos(phi) - R*q*np.sin(theta)*np.sin(phi)
+    yp = R*np.cos(theta)*np.sin(phi) + R*q*np.sin(theta)*np.cos(phi)
+    return xp, yp
+    
