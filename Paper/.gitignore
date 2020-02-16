@@ -1,5 +1,6 @@
 ## Manual ignores
 ms.pdf
+sample63.tex
 
 ## Core latex/pdflatex auxiliary files:
 *.aux

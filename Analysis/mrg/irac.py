@@ -58,9 +58,13 @@ def mosaic():
                 wcs_list[i].pscale = utils.get_wcs_pscale(wcs_list[i])
                 
             _drz = utils.drizzle_array_groups(sci_list, wht_list, wcs_list, outputwcs=outputwcs, kernel='square', pixfrac=0., verbose=True)
-            
+                        
             for iter in range(2):
                 cr_wht = [wht*1 for wht in wht_list]
+            
+                exptime = 0
+                ndrizim = 0
+                
                 # CR rejection
                 for i in range(N):
                     _blt = ablot.do_blot(_drz[0], _drz[4], wcs_list[i], 1., coeffs=True, interp='poly5')
@@ -68,7 +72,14 @@ def mosaic():
                     cr &= (_blt != 0)
                     cr_wht[i] *= (cr == 0)
                     
+                    if (_blt != 0).sum() > 10:
+                        exptime += bcd_headers[9]['EXPTIME']
+                        ndrizim += 1
+                        
                 _drz = utils.drizzle_array_groups(sci_list, cr_wht, wcs_list, outputwcs=outputwcs, kernel='square', pixfrac=0., verbose=True)
+            
+            _drz[3]['EXPTIME'] = exptime
+            _drz[3]['NDRIZIM'] = ndrizim
             
             for k in ['DATE_OBS', 'MJD_OBS', 'INSTRUME', 'CHNLNUM']:
                 _drz[3][k] = bcd_headers[0][k]

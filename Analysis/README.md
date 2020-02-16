@@ -18,3 +18,4 @@ Archive Queries
 
 [ALMA archive query](http://almascience.nrao.edu/asax/?result_view=observation&raDec=24.50990183%20-21.92601304)
 
+[legacysurvey.org (DECam)](http://legacysurvey.org/viewer?ra=24.5158&dec=-21.9256&layer=dr8&zoom=14)
