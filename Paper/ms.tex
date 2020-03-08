@@ -49,17 +49,34 @@ We report the discovery of a gravitationally-lensed, multiply-imaged transient s
 \label{s:observations}
 
 \begin{deluxetable*}{ccccccr}
-    \tablecaption{Additional archival data}
+    \tablecaption{MACSJ0138 Observation Log}
     
-    \tablehead{\colhead{Telescope} & \colhead{Instrument} & \colhead{$\lambda_\mathrm{obs}$} & \colhead{Observation date} & \colhead{MJD} & \colhead{Exp. time (s)}}
+    \tablehead{\colhead{Telescope} & \colhead{Instrument} & \colhead{$\lambda_\mathrm{obs}$} & \colhead{Observation date} & \colhead{MJD} & \colhead{SN} & \colhead{Exp. time (s)}}
 \startdata
-\textit{Spitzer} & IRAC & $3.6\,\mu\mathrm{m}$ & 2016-10-13 14:35:13 & 57674.6078 & 468 \\ % AOR r58289152
-\textit{Spitzer} & IRAC & $4.5\,\mu\mathrm{m}$ & 2016-10-13 14:35:13 & 57674.6078 & 581 \\
-\textit{Spitzer} & IRAC & $3.6\,\mu\mathrm{m}$ & 2016-03-15 03:44:04 & 57462.1556 & 212 \\ % AOR r58785536
-\textit{Spitzer} & IRAC & $4.5\,\mu\mathrm{m}$ & 2016-03-15 03:44:04 & 57462.1556 & 241 \\
-\textit{VLT}     & MUSE & 0.4--0.9$\,\mu\mathrm{m}$ & 2019-09-06 03:56:25 & 58732.1642 & 2649  \\
+\textit{Spitzer} & IRAC      & $3.6\,\mu\mathrm{m}$      & 2016-03-15 03:44:04 & 57462.1556 &   & 212 \\ % AOR r58785536
+\textit{Spitzer} & IRAC      & $4.5\,\mu\mathrm{m}$      & 2016-03-15 03:44:04 & 57462.1556 &   & 241 \\
+\textit{HST}     & ACS/WFC   & F555W                     & 2016-06-03 21:50:43 & 000        &   & 5214 \\
+\textit{HST}     & WFC3/IR   & F160W                     & 2016-07-18 23:14:50 & 000        & + & 1611 \\
+\textit{HST}     & WFC3/IR   & F105W                     & 2016-07-19 00:43:47 & 000        & + & 3611 \\ 
+\textit{Spitzer} & IRAC      & $3.6\,\mu\mathrm{m}$      & 2016-10-13 14:35:13 & 57674.6078 &   & 468 \\ % AOR r58289152
+\textit{Spitzer} & IRAC      & $4.5\,\mu\mathrm{m}$      & 2016-10-13 14:35:13 & 57674.6078 &   & 581 \\
+\textit{HST}     & WFC3/IR   & F110w                     & 2019-07-13 20:53:16 & 000        &   & 706 \\ 
+\textit{HST}     & WFC3/IR   & F140W                     & 2019-07-14 22:16:01 & 000        &   & 353 \\ 
+\textit{HST}     & WFC3/IR   & F125W                     & 2019-07-19 21:27:30 & 000        &   & 706 \\ 
+\textit{HST}     & WFC3/UVIS & F814W                     & 2019-07-21 18:50:53 & 000        &   & 912 \\ 
+\textit{HST}     & WFC3/UVIS & F390W                     & 2019-07-21 19:01:06 & 000        &   & 1272 \\ 
+\textit{HST}     & WFC3/IR   & F140W                     & 2019-07-21 22:42:22 & 000        &   & 353 \\ 
+\textit{VLT}     & MUSE      & 0.4--0.9$\,\mu\mathrm{m}$ & 2019-09-06 03:56:25 & 58732.1642 &   & 2649  \\
 \enddata
 \end{deluxetable*}
+
+\begin{figure*}
+    \centering
+    \includegraphics[width=0.9\textwidth]{Paper/Figures/fig1_layout.pdf}
+    \caption{Overview of the field around the center of the MACSJ0138 cluster field and the locations of the lensed host (H1--4) and \SNABC (SN1--3) images. The wide-field view in $a)$ is 40\arcsec\ on a side with ticks indicating 10\arcsec\ intervals.  Panels b--g) show 4\arcsec\ cutouts around the lensed SN images with 1\arcsec\ ticks.  The three-color images are generated from the WFC3/IR filters as indicated; panels $b$--$d$ show the imaging from July 2016 where the SN was visible and $e$--$g$ show the later imaging from July 2019 where the the SN has faded away.  All panels use the late-epoch F125W imaging for the green channel.  Nevertheless, it is immediately clear that the SN2 image is substantially bluer than the other two, which we use in \S\ref{s:colorcurves} below to constrain the transient classification as a likely Ia supernova explosion.}
+    
+    \label{fig:layout}
+\end{figure*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%  Lens model
@@ -70,6 +87,7 @@ We report the discovery of a gravitationally-lensed, multiply-imaged transient s
 \subsection{Multiple images}
 \label{ss:images}
 
+\XXX{Would an empirical estimate of the relative magnifications from the host images help?  Images 2&3 are blobbed together, but could possibly come up with a number like $\mu_1:(\mu_2 + \mu_3)$.}
 
 \subsection{Time delay}
 \label{ss:timedelay}
@@ -82,23 +100,26 @@ We report the discovery of a gravitationally-lensed, multiply-imaged transient s
 
 
 To evaluate the age of each transient image (and therefore constrain the lensing time delay between images), it is valuable to have a firm determination of the transient's class.  The range of possible transients is broad, encompassing normal SNe, superluminous SNe \citep{galyam_luminous_2019}, fast transients \citep{berger_fast_2013, drout_rapidly_2014}, and even gravitational microlensing events \citep{rodney_two_2018,kelly_extreme_2018}.  Identifying the transient type makes it possible to use the well-developed library of spectrophotometric SN models \citep[e.g.][]{kessler_models_2019} for the time delay measurement. 
- The first-order distinction that is most important is between a Type Ia SN--understood to be the explosion of a white dwarf star in a binary system--and core collapse SN (CCSN)--the end-point of a star with mass $\gtrsim 10$M$_{\odot}$.  Given the limited data available for this transient, we will 
+ The first-order distinction that is most important is between a Type Ia SN--understood to be the explosion of a white dwarf star in a binary system--and core collapse SN (CCSN)--the end-point of a star with mass $\gtrsim 10$M$_{\odot}$.  Given the limited data available for this transient, we will not attempt a more fine-grained classification, though in principle that could be achieved with spectroscopy and multi-band photometry upon arrival of the final image.  
  
- \SR{Add to bib file: Gal-Yam SLSN review 2019ARAA..57..305G;
- \href{https://ui.adsabs.harvard.edu/abs/2013ApJ...779...18B/abstract}{berger 2013};
-\href{https://ui.adsabs.harvard.edu/abs/2014ApJ...794...23D/abstract}{Drout Fast transients};
-Rodney 2018;  Kelly 2018
- }}
 
+
+As a first step, we can use inferences from the lens model to establish a strong prior against any of the various rapidly evolving and low-luminosity stellar transient classes.  
+The expected time delays between the images are $\sim100$ observer-frame days, 
+but we see that three images of the transient are visible simultaneously.
+From this we can infer that the visibility time of the transient in the $z=1.95$ rest-frame must be at least $\sim$30 days. 
+Similarly, with expected magnifications in the vicinity of $\mu\sim10$, the measured apparent magnitudes near 23 AB mag translate to a rest-frame absolute magnitude near $M_B \sim-19.5$ mag (too bright to be a nova, luminous blue variable, or other low-luminosity stellar transient).
+Taken together, these indicators strongly suggest that the transient is a supernova (SN). 
+
+Although we have invoked the lens model in this analysis, note that the inferences are not strongly dependent on the specific lens model predictions.  To make the observed transient images consistent with a fast or low-luminosity transient, the time delays and/or magnifications would have to be changed by more than a factor of 2.  In the analysis to follow, we will work under the assumption that the transient is a SN. 
 
 \subsection{Host galaxy properties}
 \label{ss:host}
 
-We first seek to classify this SN {\it circumstantially}, using measured properties of the host galaxy's stellar population to infer the SN's type. Although Type Ia SNe \citep{mannucci_rates_2005,foley_classifying_2013}.
+We first seek to classify this transient {\it circumstantially}, using measured properties of the host galaxy stellar population to infer the type. Although Type Ia SNe are found in all types of galaxies, CCSNe are limited to galaxies with relatively young stellar populations.  We can therefore infer some information about the SN type using the observed host properties combined with knowledge of the relative rates of Type Ia and CCSNe in different stellar populations \citep{mannucci_rates_2005,foley_classifying_2013}.  In the case of the host galaxy MRG0138, we have very stringent limits on the star formation rate. This galaxy is a high-mass but very quiescent galaxy, with a specific star formation rate of $\sim10^{-11.3}$ yr$^{-1}$  and a stellar population that is well-matched by an exponential star formation history with an age of $1.4$ Gyr \cite{newman_resolving_2018}.  The massive stars that end as CCSN explosions have main-sequence lifetimes of $\lesssim 40$ Myr,  making it highly unlikely that MRG0138 retains any significant population of massive stars \SR{this should be revised, b/c of total mass.  Focus instead on the relative probability. as discussed on telecon}
 
-\SR{TODO:  explain and cite host-based classifications, e.g. Mannucci et al. 2005,   Galsnid:  Foley and Mandel}
 
-Discussion from Newman et al. \cite{newman_resolving_2018,newman_resolving_2018-1}.
+Discussion from Newman et al. \citep{newman_resolving_2018-1}.
 
 Conclusion: the host is a red-dead elliptical. It is most likely a Type Ia SN.
 
