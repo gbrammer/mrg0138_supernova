@@ -1,6 +1,7 @@
 \documentclass[twocolumn]{aastex63}
 
 \input{Paper/preamble}
+\usepackage{apjfonts}
 
 
 \begin{document}
@@ -88,6 +89,8 @@ We report the discovery of a gravitationally-lensed, multiply-imaged transient s
 \label{ss:images}
 
 \XXX{Would an empirical estimate of the relative magnifications from the host images help?  Images 2&3 are blobbed together, but could possibly come up with a number like $\mu_1:(\mu_2 + \mu_3)$.}
+\SR{This sounds like a useful validity check 
+for a lens model.  Worth doing, but not an essential piece of info for this paper}
 
 \subsection{Time delay}
 \label{ss:timedelay}
@@ -123,21 +126,25 @@ Discussion from Newman et al. \citep{newman_resolving_2018-1}.
 
 Conclusion: the host is a red-dead elliptical. It is most likely a Type Ia SN.
 
-\subsection{Light curve analysis}
+\subsection{Classification from Color and Brightness}
 \label{ss:lightcurve}
 
-\SR{TODO: describe color-mag based classification checks}
 Figure~\ref{fig:colormag} shows the location of \SNABC in color-magnitude space, comparing the de-magnified apparent F160W magnitude against the observed F105W-F160W color.  
+For a source at $z=1.95$ the F160W band is centered near 5400 \AA, approximately corresponding to the Bessell V bandpass, while the F105W-F160W color approximates a U-V color. 
+As shown in Figure~\ref{fig:colormag}, the observed photometry for \SNABC is fully consistent with the expected color and magnitude of a Type Ia SN at $z=1.95$, after correcting for lensing magnification using the $\mu$ values from Table~\ref{tab:model_evidence}.  The magnification-corrected photometry is inconsistent with Type II SNe, which are fainter and more blue. \SNABC is marginally consistent with the CCSN Type Ib/Ic sub-class, although the image 2 point falls outside of the 95\% confidence region for that population.  
 
-\SR{TODO: describe the interpretation of possible source-plane or lens-plane extinction}
+The right panel in Figure~\ref{fig:colormag} shows that the three data points are also consistent with the expected time-dependence  of a Type Ia SN in this color-magnitude space. Visualizing the changing color and brightness of a SNIa at $z=1.95$ in the F105W and F160W bands, we see that it  would intersect image 2 near peak brightness and approach the image 1 and 3 photometry at roughly 80 observer-frame days after peak.  
 
+Taken together, this evidence reinforces the conclusion that \SNABC is most likely a Type Ia SN.  Although we have to adopt a magnification correction 
+from a lens model, this conclusion is not sensitive to the choice of lens model.  Every lens model we have evaluated locates \SNABC's un-magnified position squarely within the Type Ia region of color-magnitude space.  
+Dust is also not a confounding factor here.  The simulations used to generate the contours in Figure~\ref{fig:colormag} include dust extinction at the source plane.  If a significant screen of dust exists in the lens plane, this would have the effect of making the SN appear dimmer and more red, so correcting for that extinction would move the \SNABC requiem points upward and leftward on this plot, causing it to be even more strongly associated with the Type Ia region. 
+
+\SR{TODO: add an appendix explaining the sims}
 
 \begin{figure*}
     \centering
-    \includegraphics[width=0.45\textwidth]{Images/color_mag_contours_all.pdf}
-    \includegraphics[width=0.45\textwidth]{Images/color_mag_contours_image2.pdf}
-    \caption{Classification information for \SNABC based on its position in color-magnitude space. Contours show the population distributions for normal SNe of Type Ia (red), Type Ib/Ic (gold), and Type II (green).  These population contours are drawn to enclose 68\% (interior solid lines) and 95\% (exterior shaded regions) of each SN population.  Each SN sub-class was simulated at $z=1.95$, and samples from their expected light curves were drawn uniformly in time. 
-    The left-hand plot includes time samples ranging from a rest-frame time of 20 days prior to 100 days after peak brightness. The right-hand plot limits this range to $-5<t<5$ rest-frame days.  \SR{Kyle: did the sims for these plots include some dust extinction assumption, or range of Av values? Yes they used host dust w Rv drawn normally around 3.1, sigma 0.5, then the Av assigned using your Ia and CC pAv distributions from Rodney et al 2014a; I have updated images on evernote w a lens plane dust vector but going to hold off on putting those in until I talk to you to make sure what I did made sense there}  The observed photometry from each SN image appears with a cluster of 6 points in the plot: black markers show the observed (uncorrected) color-magnitude values, and colored markers show the demagnified value---after removing the magnification values inferred from each of the five lens model variants. Colored markers are slightly offset from the observed F105W-F160W color value for clarity.   The right-hand plot shows only the photometry for image 2, which is most strongly consistent with a Type Ia SN near peak brightness.   Red vectors in each diagram show the impact that $A_V=1$ magnitude of dust extinction would have on the observed photometry of \SNABC.  
+    \includegraphics[width=\textwidth]{Paper/Figures/classification_contours_timeline.pdf}
+    \caption{Classification information for \SNABC based on its position in color-magnitude space. (left) Contours show the population distributions for normal SNe of Type Ia (red), Type Ib/Ic (gold), and Type II (green).  These population contours are drawn to enclose 68\% (interior solid lines) and 95\% (exterior shaded regions) of each SN population.  Each SN sub-class was simulated at $z=1.95$, and samples from their expected light curves were drawn uniformly in time. Open markers show the observed photometry of the SN. Dotted vertical lines mark the magnification correction based on the lens modeling, terminating in closed markers with error bars that show the magnitude uncertainty, which is dominated by the lens modeling uncertainty.  (right) The evolution of a Type Ia SN at $z=1.95$ in observed color-mag space is shown by a colored line, with the color indicating SN age in observer-frame days relative to peak brightness.  White diamonds correspond to the times labeled on the colorbar at right. An interactive 3-D version of this figure is available online at \url{https://plot.ly/~jpierel/6/#/}
     }
     \label{fig:colormag}
 \end{figure*}
