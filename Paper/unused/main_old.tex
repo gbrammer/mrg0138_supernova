@@ -2,23 +2,28 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 
-\input{Paper/preamble}
+\usepackage{xspace}
+\usepackage{multirow}
+\usepackage[numbers]{natbib}
+\usepackage[colorinlistoftodos,textwidth=1.4in,textsize=small]{todonotes}
 
-\title{Three magnified views of a supernova explosion 10 billion years ago, and a fourth that will reveal the nature of cosmological dark energy}
+% 96 characters including spaces
+\title{(Requiem for a supernova 10 billion years ago, which in 2030 will reveal the nature of dark energy}
 
-\author[1,*]{Gabriel Brammer}
-\author[2]{Steven Rodney}
-\author[2]{Justin Pierel}
-\author[2]{Kyle O'Connor}
-\author[3]{Johan Richard}
-\author[1]{Sune Toft}
-\author[4]{Mohammad Akhshik}
-\author[5]{Katherine Whitaker}
-\affil[1]{Cosmic Dawn Center, Niels Bohr Institute, K{\o}benhavns Universitet}
-\affil[2]{University of South Carolina}
-\affil[3]{Universit\'e Claude Bernard Lyon}
-\affil[4]{University of Connecticut}
-\affil[5]{University of Massachusetts, Amherst}
+\author[1,2,*]{Gabriel Brammer}
+\author[3]{Steven Rodney}
+\author[4]{Justin Pierel}
+\author[4]{Kyle O'Connor}
+\author[4]{Johan Richard}
+\author[1,2]{Sune Toft}
+\author[5]{Mohammad Akhshik}
+\author[6,1]{Katherine Whitaker}
+\affil[1]{Cosmic Dawn Center (DAWN)}
+\affil[2]{ Niels Bohr Institute, University of Copenhagen, Denmark}
+\affil[3]{University of South Carolina}
+\affil[5]{Universit\'e Claude Bernard Lyon}
+\affil[6]{University of Connecticut}
+\affil[6]{University of Massachusetts, Amherst}
 
 \affil[*]{gabriel.brammer@nbi.ku.dk}
 
@@ -26,10 +31,21 @@
 
 %\keywords{Keyword1, Keyword2, Keyword3}
 
+%https://www.sciencemag.org/authors/instructions-preparing-initial-manuscript
+
+%a sentence giving a broad introduction to the field comprehensible to the general reader,
+
+%a sentence of more detailed background specific to your study.
+
+%an explanation of the OBJECTIVES/METHODS, and then the RESULTS
+
+%The final sentence should outline the main CONCLUSIONS of the study, in terms that will be comprehensible to all our readers
+
+
 \begin{abstract}
 % https://www.nature.com/documents/nature-summary-paragraph.pdf
 %One or two sentences providing a basic introduction to the field, comprehensible to a scientist in any discipline
-The expansion history of the Universe is one of the most fundamental observations leading to the hot big bang model for the origin of the Universe\footnote{Penzias \& Wilson 1965, ApJL, 142, 419}. 
+125W: The expansion history of the Universe is one of the most fundamental observations leading to the hot big bang model for the origin of the Universe\footnote{Penzias \& Wilson 1965, ApJL, 142, 419}. 
 %Two to three sentences of more detailed background, comprehensible to scientists in related disciplines.
 The observed brightness of distant Type Ia supernova (SN) explosions has played a key role in mapping the expansion history, and led to the discovery of dark energy that now appears to be driving an accelerating cosmic expansion rate\footnote{Riess et al. 1998, AJ, 116, 1009; Perlmutter et al. 1999, ApJ, 517, 565; Riess et al. 2007, ApJ, 659, 98}.
 Determining the nature of dark energy and how it may evolve over time is a primary goal for current and planned large-scale cosmology experiments\footnote{Amendola et al. 2013, Living Reviews in Relativity, Volume 16, Issue 1, article id. 6, 270 pp.; Ivezic et al. 2019, ApJ, 873, 111}.
@@ -44,7 +60,9 @@ With three lensed images of the supernova detected in existing observations from
 % Two or three sentences to provide a broader perspective, readily comprehensible to a scientist in any discipline, may be included in the first paragraph if the editor considers that the accessibility of the paper is significantly enhanced by their inclusion.
 
 \end{abstract}
+
 \begin{document}
+\listoftodos
 
 
 \flushbottom
@@ -56,7 +74,41 @@ With three lensed images of the supernova detected in existing observations from
 
 % \thispagestyle{empty}
 
-% \section*{Introduction}
+\section*{10 paragraphs - (total 2500 words including references, notes and captions}
+\todo[inline]{JP: Can edit intro} SN1a play a special role in cosmology, they are standard candles -> led to discovery of DE. High redshift SN-1a provide particularly strong constraints.
+\newline
+\newline
+Multiple lensed transient or varying sources can be used to constrain cosmology, through timedelay measurements.  Many quasars lensed by galaxies known, provide some of the most accurate measurements of H0.  Possibly in dissagremment with CMB 
+\newline
+\newline
+Refsdal proposed multiple lensed SN as means of constraining cosmology. A few have been observed (list), most famously the Refsdal SN, a Type II at z=1.5 lensed by a cluster, missed one image, observed 2 and predicted a fourth that was later observed
+\newline
+\newline
+Requiem is a hubble project that target rare examples of quiescent galaxies, that have been magnified by gravitational lensing. These are typically too faint and compact to be resolved even with Hubble, but due to lensing are magnified. This provides a unique opportunity to  understand the still mysterious quenching mechnism. 
+The brightest and most spectacular target of REQUIEM, first discovered by Newman in 2016 is RGM0138, is a z=2.X, logM=XX quiescent galaxy quadruply lensed by a cluster at z=0.X. The galaxy has very low SFR=XX and based on stellar ages stopped forming stars ~X.X Gyr earlier. This is a proto typical early type galaxy progenitor.
+\newline
+\newline
+During analysis of the REQUIEM observations obtained  July 2019 we discovered a new pointsource close to three of the four images, which was not there in the original Hubble images taken in July 2016 (PI Newman), when the system was first discovered (Fig 1). 
+\newline
+\newline
+
+\todo[inline]{JP: I'll fill this in from the old text, then SR and/or KO work on this classification section} The SN has different colors and brightness in the three observed images. This is expected as SN evolve in brightness and color with time, and the three images represent different times on the supernova light curve, due to the different time delays of the different images. Fig 2 shows the colors and magnitudes expected for different types of SN lightcurves. The observations classify the explosion as a Type Ia, when the magnifications from the lensing model is taken into account. This is consistent with the host galaxy being an evolved early type (void of O and B stars). Using the absolute magnitude, $M_K$, and color, $B-K$, of the host, there is about 75 percent probability that the object is of type Ia (citation to https://arxiv.org/pdf/1309.2630.pdf).
+\newline
+\newline
+\todo[inline]{JP: Need Johan to fill in this section, or give details for us to fill it in} The lensing model is derived using the lenstool software, constrained by XX spectroscopically confirmed lensed images, and scaling relation for the cluster galaxies, as well as local pertubers .... (johan)
+\newline
+\newline
+\todo[inline]{JP: I'll fill this in + Johan lens model stuff, this will include time delay/magnification constraints from SNTD} In addition to the relative magnifications of the individual images, the lensing model predicts relative timdelays between the images. These are are XXX in a greement with the observed colors evolution in Fig 2 providing confidence in the accuracy of the lensing model. The lensing model predicts that the SN should appear in the fourth image in 20XX+/-X., with a magnification of X. A fifth image will also appear in 20XX+/- but this will be demagnified and likely not observable.
+\newline
+\newline
+This is the second highest redshift SNIa, it is the first one that where we observe it from the appearance of the first image to the last (Refsdal had an image that appeared Xyears before it was first dicovered), and it it the one with the longest (predicted) timedelay.  Add here other properties that make the system unique.
+\newline
+\newline
+\todo[inline]{JP: Can edit time delay/cosmo section} Due to the long timedelay baseline, the sensitivity to cosmology is exceptional, and the precision with which cosmological parameters can be constrained is limited only by the precision of the lensing model. Assuming that H0 is determined from other methods when the fourth image appears in 20XX Fig 3 shows that this single system will have provide comparable (and complementary) constraints as those expectede from tens of lensed supernova in planned LSST and WFIRST cosmological surveys. At that time JWST will likely be in the past but we will have E-ELT, and XXX.. which will allow for cool science such as...
+
+
+
+
 
 % \section*{Results}
 
@@ -157,5 +209,8 @@ With three lensed images of the supernova detected in existing observations from
 % \end{table}
 
 % Figures and tables can be referenced in LaTeX using the ref command, e.g. Figure \ref{fig:stream} and Table \ref{tab:example}.
-
+\pagebreak
+\citep{jha_improved_2007}
+\bibliographystyle{plainnat}
+\bibliography{Paper/references}
 \end{document}
