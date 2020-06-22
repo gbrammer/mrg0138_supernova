@@ -2,6 +2,35 @@
 Discovery figure, Fig. 1
 """
 
+def for_present():
+
+    from grizli.pipeline import auto_script
+    from mastquery import overlaps
+    import astropy.io.fits as pyfits
+    import astropy.wcs as pywcs
+    import numpy as np      
+    
+    root = 'j013804m2156'
+
+    x0, y0= 2465, 1740
+    
+    NY = 400
+    NX = 400
+
+    slx = slice(x0-NX, x0+NX)
+    sly = slice(y0-NY, y0+NY)
+    
+    mi = -0.01
+    
+    si = 4.8*NX/200
+    
+    _rgb = auto_script.field_rgb(root=root, filters=['f105w','f125w','f160w'], HOME_PATH=None, xyslice=(slx, sly), show_ir=False, add_labels=False, output_format='png', suffix='.xon', rgb_min=mi, tick_interval=10, xsize=si, output_dpi=int(2*NX/si), tickparams={'axis': 'both', 'colors': 'w', 'which': 'both', 'length':0})
+    
+    rgb_scl = np.array([1.06,1.03,1.03])/1.03
+    
+    _rgb = auto_script.field_rgb(root=root, filters=['f110w','f125w','f140w'], HOME_PATH=None, xyslice=(slx, sly), show_ir=False, add_labels=False, output_format='png', rgb_scl=rgb_scl, suffix='.xoff', rgb_min=mi, tick_interval=10, xsize=si, output_dpi=int(2*NX/si), tickparams={'axis': 'both', 'colors': 'w', 'which': 'both', 'length':0})
+    
+    
 def rgb():
     
     from grizli.pipeline import auto_script
@@ -9,6 +38,8 @@ def rgb():
     import astropy.io.fits as pyfits
     import astropy.wcs as pywcs
     import numpy as np      
+    
+    from grizli import utils
     
     root = 'j013804m2156'
 
@@ -54,8 +85,8 @@ def rgb():
     from matplotlib.gridspec import GridSpec
     
     # Label offsets
-    dx = [-14, 0, 0, -8, 0, 0, 0, 0]
-    dy = [0, 8, 8, 5, 10, 10, 10]
+    dx = [-20, 10, 0, -10, 0, 0, -38]
+    dy = [0, 14, 10, 5, 10, 10, -15]
     
     fig = plt.figure(figsize=(8,3./5*8))
     gs = GridSpec(3, 5, figure=fig)
