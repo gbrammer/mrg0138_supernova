@@ -85,8 +85,8 @@ def rgb():
     from matplotlib.gridspec import GridSpec
     
     # Label offsets
-    dx = [-20, 10, 0, -10, 0, 0, -38]
-    dy = [0, 14, 10, 5, 10, 10, -15]
+    dx = [-30, 10, 0, -10, 0, 0, -38]
+    dy = [-8, 14, 10, 5, 10, 10, -15]
     
     fig = plt.figure(figsize=(8,3./5*8))
     gs = GridSpec(3, 5, figure=fig)
@@ -107,7 +107,7 @@ def rgb():
     
     labels = 'bcdefg'
     
-    for j, i in enumerate([4,5,6]):
+    for j, i in enumerate([6,5,4]):
         ax = fig.add_subplot(gs[j,3])
         img = plt.imread('{0}.on{1}.png'.format(root, coo['label'][i]))
         ax.imshow(img, origin='upper')
