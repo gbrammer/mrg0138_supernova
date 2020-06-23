@@ -87,8 +87,8 @@ def rgb():
     from matplotlib.gridspec import GridSpec
     
     # Label offsets
-    dx = [-30, 10, 0, -28, 0, 0, -38, -27]
-    dy = [-8, 14, 10, 0, 10, 10, -15, 10]
+    dx = [-30, 10, 0, -28, 0, 0, -38, -27] + [0, 0, -18, 0]
+    dy = [-8, 14, 10, 0, 10, 10, -15, 10] + [15, 15, 0, 0]
         
     ny = 3
     ny = 4
@@ -113,13 +113,22 @@ def rgb():
     ax.axis('off')
     ax.text(0.03, 0.97, 'a)', ha='left', va='top', transform=ax.transAxes, color='w')
     
-    for j, i in enumerate(range(8)):#[4,5,6]):            
-        if i == 7:
-            col = 'pink'
-        else:
-            col = 'w'
+    colors = ['w']*7 + ['pink'] + ['w']*4
+
+    for j, i in enumerate(range(8+4)):#[4,5,6]):            
+        # if i == 7:
+        #     col = 'pink'
+        # elif i > 7:
+        #     col = '0.5'
+        # else:
+        #     col = 'w'
         
-        ax.text(xyi[i][0]+dx[i], sh[0]-xyi[i][1]+dy[i], coo['label'][i], ha='center', va='top', color=col, fontsize=8)
+        if i > 7:
+            fs = 6
+        else:
+            fs = 8
+            
+        ax.text(xyi[i][0]+dx[i], sh[0]-xyi[i][1]+dy[i], coo['label'][i], ha='center', va='top', color=colors[i], fontsize=fs)
     
     labels = 'bcdefghijk'
     
@@ -140,7 +149,7 @@ def rgb():
         ax.axis('off')
         
         ax.text(0.05, 0.95, '{0}): {1}'.format(labels[j], coo['label'][i]), 
-                ha='left', va='top', color=col, transform=ax.transAxes)
+                ha='left', va='top', color=colors[i], transform=ax.transAxes)
         
         di = 0.02
         if j == 2:
@@ -157,7 +166,7 @@ def rgb():
         ax.axis('off')
         
         ax.text(0.05, 0.95, '{0})'.format(labels[j+ny], coo['label'][i]), 
-                ha='left', va='top', color=col, transform=ax.transAxes)
+                ha='left', va='top', color=colors[i], transform=ax.transAxes)
         
         if j == 2:
             ax.text(0.06+di, 0.07, r'$y_\mathrm{{110}}$', ha='left', va='bottom', color='w', transform=ax.transAxes)
@@ -175,9 +184,9 @@ def rgb():
         phi = (-126.5)/180*np.pi
         _mat = np.array([[np.cos(phi), -np.sin(phi)], [np.sin(phi), np.cos(phi)]])
         xyreg = np.dot(np.array([xt, yt]).T, _mat)
-        xreg = xyreg[:,0] + xyi0[-1,0]
-        yreg = sh[0]-(xyreg[:,1] + xyi0[-1,1])
-        fig.axes[0].plot(xreg, yreg, color=col)
+        xreg = xyreg[:,0] + xyi0[7,0]
+        yreg = sh[0]-(xyreg[:,1] + xyi0[7,1])
+        fig.axes[0].plot(xreg, yreg, color=colors[7])
         
         # Subregion
         pixgrow2 = img.shape[0]/2/N
@@ -190,7 +199,7 @@ def rgb():
         yreg = img.shape[0] - (xyreg[:,1] + xy0[7,1] - xy[7][1] + N)*pixgrow2
         
         for a in fig.axes[-2:]:
-            a.plot(xreg, yreg, color=col)
+            a.plot(xreg, yreg, color=colors[7])
         
     gs.tight_layout(fig, pad=0.1)
     fig.savefig('fig1_layout.pdf', dpi=150)   
@@ -252,10 +261,15 @@ def phot_limits():
     
         var = 1/filts[filt]['wht'][sly, slx]
         xc = xpi-xi+N
-        _phot = sep.sum_circle((subsci - _m).astype(np.float32), [xc[i,0]], [xc[i,1]], [3.5], subpix=0, var=var)
-    
+
         ZP, ee = get_hst_ee(filt) 
-        print('{0} {1:.2f}±{2:.2f}  {3:.2f} {4:.2f} {5:.2f}'.format(filt, _phot[0][0], _phot[1][0], ZP - 2.5*np.log10(_phot[0][0]/ee), 2.5/np.log(10)*_phot[1][0]/_phot[0][0], ZP - 2.5*np.log10(_phot[1][0]/ee*5)))
+        to_ujy = 10**(-0.4*(ZP-23.9))
+        
+        _phot = sep.sum_circle((subsci - _m).astype(np.float32)*to_ujy, [xc[i,0]], [xc[i,1]], [3.5], subpix=0, var=var*to_ujy**2)
+        
+        ZP = 23.9
+        
+        print('{6:.2f} {0} {1:4.2f}±{2:.2f}  {3:.2f} {4:.2f} {5:.2f}'.format(filt, _phot[0][0], _phot[1][0], ZP - 2.5*np.log10(_phot[0][0]/ee), 2.5/np.log(10)*_phot[1][0]/_phot[0][0], ZP - 2.5*np.log10(_phot[1][0]/ee*5), filts[filt]['im'][0].header['EXPSTART']))
     
     
     
