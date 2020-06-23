@@ -167,8 +167,8 @@ def rgb():
             ax.text(0.06+di, 0.18, '2019', ha='left', va='bottom', color='w',
                     transform=ax.transAxes)
     
+    # Error ellipse for SN4
     if 1:
-        # Error ellipse for SN4
         thet = np.linspace(0, 2*np.pi, 256)
         xt = np.cos(thet)*4.95*pixgrow
         yt = np.sin(thet)*1.14*pixgrow
