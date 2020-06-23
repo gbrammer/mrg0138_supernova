@@ -27,8 +27,13 @@
 \usepackage{xspace}
 
 \gdef\arcsec{$^{\prime\prime}$}
-\def\SNABC{SN Requiem\xspace}
-\def\reqlike{Requiem-like\xspace}
+%\def\SNABC{SN Requiem\xspace}
+
+%\def\SNABC{AT 2016{\textcolor{red}{tbd}}\xspace}
+%\def\reqlike{16{\textcolor{red}{tbd}}-like\xspace}
+
+\def\SNABC{AT 2016{\textcolor{Gray}{tbd}}\xspace}
+\def\reqlike{16{\textcolor{Gray}{tbd}}-like\xspace}
 \def\lenstool{{\tt LENSTOOL}\xspace}
 
 % Users of the {thebibliography} environment or BibTeX should use the
@@ -164,7 +169,7 @@ quasars \cite{suyu_cosmology_2014,bonvin_cosmograil_2019}, with six high-precisi
 Gravitationally lensed SN with multiple images present an attractive new addition to this field. Most notably, SN exhibit relatively simple photometric behavior, with well-understood light curve shapes and colors---a contrast to the stochastic variation of quasars.  However, the exploration of lensed SN time delay cosmography has been hindered by their rarity.  To date, there have been only two lensed SN observed with multiple images \cite{kelly_multiple_2015,goobar_iptf16geu:_2017}. The first, {\it SN Refsdal}, was a peculiar Type II SN whose image with the longest delay was missed \cite{kelly_SNRefsdal_2016}. The second, {\it SN 2016geu}, was a Type Ia SN with short delays that make high precision time delay measurements impossible \cite{dhawan_magnification_2020}. Here we present the discovery 
 of a third lensed SN resolved into multiple images: \SNABC. 
 
-We discovered SN Requiem using data from the Hubble Space Telescope (HST) program {\it REsolved QUIEscent Magnified Galaxies} (REQUIEM, HST-GO-15663, PI:Akhshik). This project targets rare examples of quiescent galaxies that have been magnified by strong gravitational lensing. %These are typically too faint and compact to be resolved even with Hubble, but due to lensing are magnified. This provides a unique opportunity to  understand the still mysterious quenching mechnism. 
+We discovered \SNABC using data from the Hubble Space Telescope (HST) program {\it REsolved QUIEscent Magnified Galaxies} (REQUIEM, HST-GO-15663, PI:Akhshik). This project targets rare examples of quiescent galaxies that have been magnified by strong gravitational lensing. %These are typically too faint and compact to be resolved even with Hubble, but due to lensing are magnified. This provides a unique opportunity to  understand the still mysterious quenching mechnism. 
 The brightest and most spectacular galaxy targeted by REQUIEM
 is MRG-M0138, first discovered as a massive red galaxy (MRG) at $z=1.95$ \cite{newman_resolving_2018} behind the massive galaxy cluster MACS J0138.0-2155 \cite{ebeling_macs_2001}.
 MRG-M0138 is quadruply lensed by the foreground cluster, which is at $z=0.338$.  
@@ -174,16 +179,19 @@ that first confirmed the MRG-M0138 galaxy as a strongly-lensed object (HST-GO-14
 Each point source is within 5 arcseconds of one of the four MRG-M0138 images.  None of the
 three point sources are present in the REQUIEM HST data in 2019 (Fig \ref{fig:layout}). We infer that 
 the point sources are multiple images of a single astrophysical 
-transient in MRG-M0138, most likely a SN. Hereafter we call this multiply-imaged transient \SNABC.
+transient in MRG-M0138, most likely a SN \cite{materials_methods_2020}.  
+%Hereafter we call this multiply-imaged transient \SNABC.
+The official designation for this multiply-imaged astrophysical transient is \SNABC.
 
 To construct a lens model for the MACS J0138.0-2155 cluster we used the publicly available \lenstool software \cite{jullo_bayesian_2007, kneib_lenstool_2011} to model the mass distribution in the cluster core as the combination of a cluster scale and multiple galaxy scale potentials \cite{materials_methods_2020}.  To avoid unintended bias, we kept the lens model development completely separate from the analysis of the SN.  Only upon independent completion of both were the results combined for the analysis described here.  The input model constraints are the positions and redshifts of the MRG-M0138 galaxy at $z=1.95$ (both the central light peak and the SN location in each image) as well as a multiply-imaged background 
 galaxy at $z=0.766$, both having secure spectroscopic redshifts \cite{materials_methods_2020}.  
 From this model we derive estimates for the lensing magnification and time delay of each of the SN images, including the predicted fourth image (Table \ref{tab:time_delays}).
-The lensing model predicts that the SN should appear in the fourth MRG-M0138 image in the year 2037$\pm$1.5, demagnified with $\mu=0.4\pm0.2$. A fifth image will also appear at a later date, located very near the center of the cluster and much more significantly demagnified, so therefore likely not observable.  
+The lensing model predicts that the SN should appear in the fourth MRG-M0138 image in the year 2037$\pm$1.5, demagnified with $\mu=0.4\pm0.2$. The predicted location for this future image is $\alpha=01:38:04.15,\delta=-21:55:24.659$.
+A fifth image will also appear at a later date, located very near the center of the cluster and much more significantly demagnified, so therefore likely not observable.  
  
  
 %The range of possible transients for Requiem is broad, encompassing normal SNe, superluminous SNe (galyam luminous 2019), fast transients (berger fast 2013, drout rapidly 2014), and even gravitational microlensing events (rodney two 2018, kelly extreme 2018). 
-To realize the cosmological promise of SN Requiem 
+To realize the cosmological promise of \SNABC 
 we need to estimate the age of each SN image, which in turn constrains the lensing time delays. For this
 goal, it is valuable to have a firm determination of the transient’s class. Expected time delays and magnifications from the lens model exclude any of the various rapidly evolving and low-luminosity stellar transient classes, strongly suggesting that it is a SN. The first-order SN distinction remaining is between a Type Ia SN---the explosion of a white dwarf star in a binary system---and a core collapse SN (CCSN)---the end-point of a star with mass $\gtrsim 10 M_{\odot}$. 
 The properties of the host galaxy can inform this classification because CCSN are limited to galaxies with young stellar populations. Limits on the specific star formation rate and age for this host, MRG-M0138, show it to be a massive but very quiescent and evolved galaxy, %($\log(M_*/M_\odot)=11.7\pm0.2; )$ , 
@@ -243,18 +251,18 @@ further reduced when the future fourth image is observed with high-precision, mu
 Future large-scale surveys such as the Vera C. Rubin Observatory 
 %Legacy Survey of Space and Time (LSST) 
 and the Nancy Grace Roman Space Telescope will observe dozens to hundreds of lensed SN over their duration \cite{oguri_gravitationally_2010,goldstein_rates_2019,wojtak_magnified_2019}. However, many of these lensed SN will require substantial follow-up resources to be cosmologically useful. Furthermore, almost all will have significantly shorter 
-delays (of order 10-100 days) and therefore higher relative uncertainties than SN Requiem.  Since it is the {\it fractional} time delay uncertainty that 
+delays (of order 10-100 days) and therefore higher relative uncertainties than \SNABC.  Since it is the {\it fractional} time delay uncertainty that 
 propagates through to any time delay distance measurement, the extraordinarily long time delays of cluster-lensed SNe like SN Requiem can deliver significantly better time delay precision, with comparable observational cost.  In fact, the long time baseline of lensed SN like \SNABC effectively insures that their cosmological precision is not limited by the time delay measurement errors.  
 
 In Figure \ref{fig:cosmo} we illustrate the cosmological value of time delay cosmography with objects like \SNABC  by considering a small sample of 5 ``\reqlike'' SN.  For a comparison on equal footing, we evaluate equal-sized lensed SN samples 
 that mimic those expected from the Rubin Observatory and  the Roman Space Telescope.  Differences in the 
-ratio of source to lens redshift account for the different cosmological parameter covariances, reflected in the orientations of the contours in these plots. Because of the unusually large redshift ratio of SN Requiem, the constraints 
+ratio of source to lens redshift account for the different cosmological parameter covariances, reflected in the orientations of the contours in these plots. Because of the unusually large redshift ratio of \SNABC, the constraints 
 %on dark energy equation of state parameters ($w_0$, $w_a$) 
 from the \reqlike sample are nicely complementary to the low-$z$ Rubin Observatory and high-$z$ Roman Space Telescope samples. 
 Furthermore, when we assume that the lens modeling uncertainty is equal for each sample (amounting to a 5\% uncertainty in each time delay distance), the \reqlike sample has leverage that is comparable to the same number of lensed SN from the wide-field surveys. However, if we improve  the lensing constraints to 2\% precision, the \reqlike contours tighten dramatically, reflecting the fact that these long-time-baseline events are limited only by the lens modeling uncertainty.
 
 
-To achieve these cosmological constraints in practice, such a sample could be developed with regular monitoring of cluster-scale lenses, partnered with modest follow-up to characterize any lensed SN discovered.  As \SNABC has shown, even a single epoch of photometric data at the time of detection may be sufficient to provide the necessary anchor point for this promising cosmological tool.  After that, all we need is patience.
+To achieve these cosmological constraints in practice, such a sample could be developed with regular monitoring of cluster-scale lenses, partnered with modest follow-up to characterize any lensed SN discovered.  As \SNABC shows, even a single epoch of photometric data at the time of detection may be sufficient to provide the necessary anchor point for this promising cosmological tool.  After that, all we need is patience.
 
 
 
@@ -272,7 +280,7 @@ To achieve these cosmological constraints in practice, such a sample could be de
 \begin{figure*}
     \centering
     \includegraphics[draft=False,width=0.9\textwidth]{Paper/Figures/fig1_layout.pdf}
-    \caption{Overview of the MACSJ0138 cluster field and the locations of the SN Requiem (SN1--3) images and its multiply-imaged host galaxy (H1--4). The wide-field view in $a)$ is 40\arcsec\ on a side with ticks indicating 10\arcsec\ intervals.  Panels b--g) show 4\arcsec\ cutouts around the lensed SN images with 1\arcsec\ ticks.  The three-color images are generated from the WFC3/IR filters as indicated; panels $bcd$ show the imaging from July 2016 where the SN was visible and $efg$ show the later imaging from July 2019 where the the SN has faded away.  All panels use the late-epoch F125W imaging for the green channel.  Nevertheless, it is immediately clear that the SN2 image is substantially bluer than the other two, which we use to constrain the transient classification as a likely Ia supernova explosion and to constrain the relative age of each SN image.}
+    \caption{Overview of the MACSJ0138 cluster field and the locations of the \SNABC images  (SN1--3) and its multiply-imaged host galaxy (H1--4). The wide-field view in $a)$ is 40\arcsec\ on a side with ticks indicating 10\arcsec\ intervals.  Panels b--g) show 4\arcsec\ cutouts around the lensed SN images with 1\arcsec\ ticks.  The three-color images are generated from the WFC3/IR filters as indicated; panels $bcd$ show the imaging from July 2016 where the SN was visible and $efg$ show the later imaging from July 2019 where the the SN has faded away.  All panels use the late-epoch F125W imaging for the green channel.  Nevertheless, it is immediately clear that the SN2 image is substantially bluer than the other two, which we use to constrain the transient classification as a likely Ia supernova explosion and to constrain the relative age of each SN image.}
     
     \label{fig:layout}
 \end{figure*}
@@ -290,7 +298,7 @@ To achieve these cosmological constraints in practice, such a sample could be de
     \centering
     \includegraphics[draft=False,trim={2cm, 3cm, 3cm, 4cm},clip,width=\textwidth]{Paper/Figures/snrequiem_hw_w0wa_apples_to_lsst_ngrst_4panel.pdf}
     \caption{  
-    The sensitivity of SN Requiem to the expansion rate of the universe ($H_0$) and dark energy equation of state parameters ($w_0, w_a$). Dashed lines and the white marker show the input values (upper right of the top panels) that were used for this simulation. Contours show the 1$\sigma$ confidence region for a projected sample of 5 lensed SNIa time delays from the Rubin Observatory (blue) and the Roman Space Telescope (red) compared to 5 events like \SNABC (black).  The left and right columns assume a 5\% and 2\% contribution to the distance uncertainty from modeling the lens potential, respectively. Improving the lens modeling tightens the cosmological constraints for all three samples, but the improvement for the \SNABC-like sample is the most significant.  This is simply because the long time delay baseline for \SNABC makes the time delay uncertainty negligible, raising the ceiling for cosmological improvement with tighter lens modeling constraints.  In order to isolate the plotted parameters, all contours are constructed assuming perfect knowledge of the cosmological parameters that are not shown. 
+    The sensitivity of \SNABC to the expansion rate of the universe ($H_0$) and dark energy equation of state parameters ($w_0, w_a$). Dashed lines and the white marker show the input values (upper right of the top panels) that were used for this simulation. Contours show the 1$\sigma$ confidence region for a projected sample of 5 lensed SNIa time delays from the Rubin Observatory (blue) and the Roman Space Telescope (red) compared to 5 events like \SNABC (black).  The left and right columns assume a 5\% and 2\% contribution to the distance uncertainty from modeling the lens potential, respectively. Improving the lens modeling tightens the cosmological constraints for all three samples, but the improvement for the \SNABC-like sample is the most significant.  This is simply because the long time delay baseline for \SNABC makes the time delay uncertainty negligible, raising the ceiling for cosmological improvement with tighter lens modeling constraints.  In order to isolate the plotted parameters, all contours are constructed assuming perfect knowledge of the cosmological parameters that are not shown. 
     }
     \label{fig:cosmo}
 \end{figure}
@@ -299,7 +307,7 @@ To achieve these cosmological constraints in practice, such a sample could be de
 
 \begin{table}
 \centering
-\begin{tabular}{ccc|cc}
+\begin{tabular}{crc|cc}
     \multicolumn{1}{c}{}&
     \multicolumn{2}{c}{\textbf{Inferred from Photometry}}&\multicolumn{2}{c}{\textbf{Lens Model Predictions}}\\
     %\multicolumn{1}{c}{}&\multicolumn{1}{c}{}\\
@@ -309,7 +317,7 @@ To achieve these cosmological constraints in practice, such a sample could be de
 \midrule
 \textit{1}  & $112^{+20}_{-38}$ & -- & $3.9\pm0.5$ & --\\
 \textit{2} & $-27^{+26}_{-6}$ & $139^{+63}_{-23}$ & $7\pm3$ & $101\pm62$ \\
-\textit{3} & $88\pm15$ & $16\pm19$ & $5\pm1$ & $19\pm34$ \\
+\textit{3} & $88^{+15}_{-15}$ & $16^{+19}_{-19}$ & $5\pm1$ & $19\pm34$ \\
 \textit{4} & -- & -- & $0.4\pm0.2$ & $7761\pm541$\\
 
 % 2020.06.19  OLD DATA (prior to MODEL H) with time delays referenced to image 2.
@@ -424,14 +432,14 @@ Obs. Date (MJD) & Filter & Flux density ($\mu$Jy) \\
 We make use of integral field spectroscopic data obtained on the cluster core of MRG0138 with VLT/MUSE, publicly 
 available as part of the program 0103.A-0777(A) (PI: Edge). Three exposures of 970 sec each were taken with a small dithering offset and 90 degree rotations in between. This dataset was reduced and analysed using the MUSE data reduction pipeline v.2.7 \cite{weilbacher_data_2020} for basic calibration (bias, flat-field, wavelength, LSF, geometry) as well as flux calibration, sky subtraction and astrometry. We  also make use of the self-calibration technique \cite{bacon_muse_2017}  to remove illumination systematics, specifically tuned for the case of crowded fields in the central region of galaxy clusters (Richard et al. in prep.). The combined datacube is then processed through {\tt ZAP} \cite{soto_zap_2016} which applies a PCA technique to remove sky subtraction residuals. The final datacube covers the central 1x1 arcmin$^2$ around the cluster center with 0.2\arcsec$\times$0.2\arcsec$\times$1.25\AA\ pixels.
 
-We have extracted spectra for each HST detected source and inspected them for redshift measurements. In addition, we have run the {\tt muselet} software (publicly available as part of the MPDAF package \cite{piqueras_mpdaf_2019}\footnote{\url{https://mpdaf.readthedocs.io/en/latest/muselet.html}}) to search for line emitters not directly associated with HST sources \cite{mahler_strong_2018,lagattuta_probing_2019}. Apart from the lensed quiescent galaxy, we measured spectroscopic redshifts for cluster members and one ring-like background galaxy north of the BCG at $z=0.776$.
+We have extracted spectra for each HST detected source and inspected them for redshift measurements. In addition, we have run the {\tt muselet} software (publicly available as part of the MPDAF package \cite{piqueras_mpdaf_2019}\footnote{\url{https://mpdaf.readthedocs.io/en/latest/muselet.html}}) to search for line emitters not directly associated with HST sources \cite{mahler_strong_2018,lagattuta_probing_2019}. Apart from the lensed quiescent galaxy, we measured spectroscopic redshifts for cluster members and one ring-like background galaxy north of the BCG at $z=0.766$.
 
 \subsection*{Lens Modeling}
 %\todo[inline]{Fill in details of lens models here.}
 
 In order to correctly estimate the magnification factors, time delays, and predict the appearance of the future images of MRG0138-SN we need to precisely model the mass distribution in the MRG0138 cluster core. To do so we make use of the latest version of \lenstool \cite{jullo_bayesian_2007}\footnote{publicly available at \url{ https://git-cral.univ-lyon1.fr/lenstool/lenstool}}, which performs a Bayesian analysis with an MCMC sampler to estimate the best fit and error on each parameter of the mass distribution. 
 
-The strong-lensing constraints used are the locations of multiple images found in HST and MUSE/VLT. More specifically we group them into 3 systems: (1) the 4 images of the quiescent galaxy hosting MRG0138-SN, (2) the 3 observed images of MRG0138-SN assumed at the same redshift, and (3) the diffuse arc-like structure identified in HST and confirmed as an [OII] emitter in the VLT/MUSE data (see previous section). The locations and redshifts used in the lens model are summarised in Table \ref{tab:mulimages}.
+The strong-lensing constraints used are the locations of multiple images found in HST and MUSE/VLT. More specifically we group them into 3 systems: (a) the 4 images of the quiescent galaxy hosting MRG0138-SN, (b) the 3 observed images of MRG0138-SN assumed at the same redshift, and (c) the diffuse arc-like structure identified in HST and confirmed as an [OII] emitter in the VLT/MUSE data (see previous section). The locations and redshifts used in the lens model are summarised in Table \ref{tab:mulimages}.
 
 \begin{table}[]
     \centering
@@ -463,10 +471,11 @@ We individually optimise the $\sigma$ and $r_{\rm cut}$ parameters for 4 specifi
 
 \lenstool optimises the parameters of the model by minimising the overall root mean square dispersion (RMS) between the predicted and observed locations of the multiple images. The best fit parameters of each mass component are provided in Table~\ref{tab:massmodel}. The error bars are derived from the MCMC models sampling their posterior probability distribution. 
 
-We developed five lens model variants blindly (i.e., without knowing the impact of each lens model variation on the transient classification or time delay inferences). Model A was the first viable model developed, which did not include additional perturbers, and did not include the additional lensed background source at $z=0.7763$.   In Model B we allowed for the location of the main cluster dark matter halo to be free, with an offset from the reference position taken at the BCG center.  Model C allowed the same central position offset and also relaxed the constraints on the BCG ($\sigma$ and $r_{\rm cut}$).  Model D fixed the primary dark matter halo at the BCG center, but still relaxed the constraints on the BCG $\sigma$ and $r_{\rm cut}$.
+We developed five lens model variants blindly (i.e., without knowing the impact of each lens model variation on the transient classification or time delay inferences). Model A was the first viable model developed, which did not include additional perturbers, and did not include the additional lensed background source at $z=0.7663$.   In Model B we allowed for the location of the main cluster dark matter halo to be free, with an offset from the reference position taken at the BCG center.  Model C allowed the same central position offset and also relaxed the constraints on the BCG ($\sigma$ and $r_{\rm cut}$).  Model D fixed the primary dark matter halo at the BCG center, but still relaxed the constraints on the BCG $\sigma$ and $r_{\rm cut}$.
 The final model, and the one selected as the preferred model prior to unblinding, is model E, which includes all four perturbers described above, and includes the additional background object at $z=0.7663$.
 
-The final \lenstool model E reproduces all multiple systems with an RMS of 0.15\arcsec. We also simulated the overall shape of the quiescent galaxy using the sum of two Sersic profiles, and check from the HST residuals that they reproduce the pixel-to-pixel morphology of the arcs. This model is then used to predict the magnification and time delays for the 3 observed images of \SNABC, as well as the location of the fourth  image, which is still to appear. As the lens model reproduces the location of the SN images within a small uncertainty, these predictions are computed with \lenstool using the barycenter of all source positions corresponding to images SN.1, SN.2 and SN.3 as the same reference source position. We summarise these predictions in Table \ref{tab:snpred}.
+The final \lenstool model E reproduces all multiple systems with an RMS of 0.15\arcsec. We also simulated the overall shape of the quiescent galaxy using the sum of two Sersic profiles, and check from the HST residuals that they reproduce the pixel-to-pixel morphology of the arcs. This model is then used to predict the magnification and time delays for the 3 observed images of \SNABC, as well as the location of the fourth  image, which is still to appear. The actual 1$\sigma$ uncertainty on this location is the ellipse overlayed on top of the bottom cutouts in Fig.~\ref{fig:layout}. As the lens model reproduces the location of the SN images within a small uncertainty, these predictions are computed with \lenstool using the barycenter of all source positions corresponding to images SN.1, SN.2 and SN.3 as the same reference source position. We summarise these predictions in Table \ref{tab:snpred}.
+
 
 \begin{table}[]
     \centering
@@ -499,10 +508,10 @@ L$^{*}$ galaxy &           &           &          &           & $[45]$          
     Image     & R.A. & Dec. & $\mu$ & $\Delta t$ \\
     & & & & [days] \\
 \hline 
-SN1 & 01:38:02.4186     & -21:55:38.465         & 3.9$\pm$0.5   &   0.0 \\
-SN2 & 01:38:02.9568     & -21:55:47.263         & 7$\pm$3     & 101$\pm62$ \\
-SN3 & 01:38:03.6310     & -21:55:50.382         & 5$\pm$1     &  19$\pm34$\\
-SN4 & 01:38:04$\pm$0.36 & -21:55:24.73$\pm$0.43 & 0.4$\pm$0.2 & 7760.0$\pm$540\\
+SN1 & 01:38:02.419     & -21:55:38.47         & 3.9$\pm$0.5   &   0.0 \\
+SN2 & 01:38:02.957     & -21:55:47.26         & 7$\pm$3     & 101$\pm62$ \\
+SN3 & 01:38:03.631     & -21:55:50.38         & 5$\pm$1     &  19$\pm34$\\
+SN4 & 01:38:04.15$\pm$0.36 & -21:55:24.73$\pm$0.43 & 0.4$\pm$0.2 & 7760.0$\pm$540\\
 %SN.1 & & & 3.907$\pm$0.534 &   0.0 \\
 %SN.2 & & & 7.381$\pm$3.044 & 101.4$\pm62$ \\
 %SN.3 & & & 5.020$\pm$1.217 &  19.3$\pm34$\\
