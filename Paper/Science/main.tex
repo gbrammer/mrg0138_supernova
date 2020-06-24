@@ -1,39 +1,23 @@
 % Use only LaTeX2e, calling the article.cls class and 12-point type.
 
-\documentclass[12pt,dvipsnames]{article}
+\documentclass[12pt]{article}
 
 
 %extra packages added during drafting, remove for submission
-\usepackage{todonotes}
 \usepackage{hyperref}
 \usepackage{booktabs}
 
-% Simple little macros to hide and highlight some text:
-%\newcommand{\highlight}[1]{{\bf \textcolor{Maroon}{#1}}}
-\newcommand{\highlight}[1]{{\bf {#1}}}
-
-%\usepackage{ifthen}
-\newif\ifshowoutline
-%\showoutlinetrue
-\showoutlinefalse
-\ifshowoutline
-    \newcommand{\outline}[1]{\textcolor{blue}{#1}}
-\else
-    \newcommand{\outline}[1]{}
-\fi
-
-
-\usepackage{amssymb}
+%\usepackage{amssymb}
 \usepackage{xspace}
+\usepackage{graphicx}
 
 \gdef\arcsec{$^{\prime\prime}$}
+\def\TNSname{AT 2016tbd\xspace}
+\def\SNABC{AT 2016tbd\xspace}
 %\def\SNABC{SN Requiem\xspace}
+%\def\reqlike{Requiem-like\xspace}
+\def\reqlike{16tbd-like\xspace}
 
-%\def\SNABC{AT 2016{\textcolor{red}{tbd}}\xspace}
-%\def\reqlike{16{\textcolor{red}{tbd}}-like\xspace}
-
-\def\SNABC{AT 2016{\textcolor{Gray}{tbd}}\xspace}
-\def\reqlike{16{\textcolor{Gray}{tbd}}-like\xspace}
 \def\lenstool{{\tt LENSTOOL}\xspace}
 
 % Users of the {thebibliography} environment or BibTeX should use the
@@ -75,10 +59,7 @@
 
 % Include your paper's title here
 
-%\title{Requiem for a 10 billion year old supernova } 
 \title{A Gravitationally Lensed Supernova with an Observable Two-Decade Time Delay}
-%\title{A Strongly Lensed Type Ia Supernova with a Decade-Long Time Delay}
-%\title{SN Requiem: A Strongly Lensed Type Ia Supernova with a Decade-Long Time Delay}
 
 % Place the author information here.  Please hand-code the contact
 % information and notecalls; do *not* use \footnote commands.  Let the
@@ -86,27 +67,28 @@
 % as shown.  We would also prefer that you don't change the type-size
 % settings shown here.
 
-
-%%%%%%%fill in once decided
-% \author
-% {John Smith,$^{1\ast}$ Jane Doe,$^{1}$ Joe Scientist$^{2}$\\
-% \\
-% \normalsize{$^{1}$Department of Chemistry, University of Wherever,}\\
-% \normalsize{An Unknown Address, Wherever, ST 00000, USA}\\
-% \normalsize{$^{2}$Another Unknown Address, Palookaville, ST 99999, USA}\\
-% \\
-% \normalsize{$^\ast$To whom correspondence should be addressed; E-mail:  jsmith@wherever.edu.}
-% }
+\author{
+ Steven A. Rodney$^{1\ast}$, 
+ Gabriel Brammer$^{2\ast}$,  
+ Justin D.\,R.~Pierel$^{1}$,\\ 
+ Johan Richard$^{3}$, 
+ Sune Toft$^{2}$,\\  
+ Kyle F. O'Connor$^{1}$, 
+ Mohammad Akhshik$^{4}$, 
+ Katherine E. Whitaker$^{2,4,5}$  
+\\
+\normalsize{$^{1}$Department of Physics \& Astronomy, University of South Carolina,}\\ \normalsize{ Columbia, SC 29208, USA}\\
+\normalsize{$^{2}$Cosmic Dawn Center, Niels Bohr Institute, University of Copenhagen,}\\ \normalsize{Lyngbyvej 2, Copenhagen \O\ 2100 Denmark}\\
+\normalsize{$^{3}$Univ Lyon, Univ Lyon1, Ens de Lyon, CNRS, Centre de Recherche Astrophysique de Lyon}\\ \normalsize{UMR5574, F-69230, Saint-Genis-Laval, France}\\
+\normalsize{$^{4}$Department of Physics, University of Connecticut,}\\ \normalsize{Storrs, CT 06269, USA}\\
+\normalsize{$^{5}$Department of Astronomy, University of Massachusetts,}\\ \normalsize{Amherst, MA 01003, USA}\\
+\normalsize{$^\ast$To whom correspondence should be addressed;}\\ \normalsize{E-mail:  srodney@sc.edu, gabriel.brammer@nbi.ku.dk}
+}
 
 % Include the date command, but leave its argument blank.
-
 \date{}
 
-
-
 %%%%%%%%%%%%%%%%% END OF PREAMBLE %%%%%%%%%%%%%%%%
-
-
 
 \begin{document} 
 
@@ -118,18 +100,13 @@
 
 \maketitle 
 
-
+\paragraph*{One Sentence Summary:} A distant supernova has appeared as three images magnified by the gravity of a galaxy cluster, and will reappear in 20 years.
 
 % Place your abstract within the special {sciabstract} environment.
 
 \begin{sciabstract}
-%   The expansion history of the Universe is one of the most fundamental observations leading to the hot big bang model for the origin of the Universe\footnote{Penzias \& Wilson 1965, ApJL, 142, 419}. 
-  
-  We report the discovery of a quadruply-lensed supernova (SN) explosion that will enable a time delay measurement with an uncertainty of $<1\%$. This unprecedented scenario will enable a rare and highly precise measurement of the Hubble constant from a single lensed SN.  The SN is in an evolved galaxy at $z=1.95$, gravitationally lensed by the massive foreground galaxy cluster MACSJ0138.  
- This is the most distant multiply-imaged supernova yet discovered, and we find it is classified as a Type Ia with {$>90\%$} probability.
-  Three lensed images of the SN are detected in existing observations from the \textit{Hubble Space Telescope} with relative time delays of $<$200 days.  A fourth image in the component closest to the cluster core is predicted to appear in the year 2037$\pm$2.  Observing the light curve of that future image could provide a time delay precision of $\approx 7$ days over an extraordinary baseline of nearly 20 years. 
-  
-  
+
+  We report the discovery of a strongly-lensed supernova (SN) explosion that will enable a time delay measurement with an uncertainty of $<1\%$. This unprecedented scenario will enable a rare and highly precise measurement of the Hubble constant from a single lensed SN.  The SN is in an evolved galaxy at $z=1.95$, gravitationally lensed by the massive foreground galaxy cluster MACS J0138.0-2155.  This is the most distant multiply-imaged supernova yet discovered.  We classify the supernova as a Type Ia with {$>90\%$} probability based on archival imaging observations from the \textit{Hubble Space Telescope}.  Three lensed images of the SN are detected with relative time delays of $<$200 days, and we predict that a fourth image in the component closest to the cluster core will appear in the year 2037$\pm$2.  Observing the light curve of that future image could provide a time delay precision of $\approx 7$ days over an extraordinary 20 year baseline. 
 
 \end{sciabstract}
 
@@ -144,128 +121,73 @@
 % choice.  Either way, use the asterisk (*) modifier, as shown, to
 % suppress numbering.
 
-%\section*{Introduction}
 
-
-
-%\todo[inline]{JP: Can edit intro} SN1a play a special role in cosmology, they are standard candles -> led to discovery of DE. High redshift SN-1a provide particularly strong constraints.
-%\newline
+\section*{Main Text:}
 
 Observations of Type Ia supernova (SN) explosions have played a key role in mapping the cosmic expansion history, and led to the discovery of dark energy that now appears to be driving an accelerating cosmic expansion rate\cite{riess_observational_1998,perlmutter_measurements_1999, Riess_large_2019}.  Determining the nature of dark energy and how it may evolve over time is a primary goal for the large-scale cosmology experiments of the 2020s \cite{amendola_cosmology_2013,spergel_wide_2015,Ivezic_lsst_2019}.
 A series of recent investigations into the expansion rate of the universe (the Hubble-LeM\^aitre constant; $H_0$) have found that measurements from the local universe are significantly different from the value inferred from measurement of the cosmic microwave background (CMB) radiation \cite{Riess_large_2019,aghanim_planck_2018}.  Resolving this tension in $H_0$ measurements may reveal new physics from the early universe, and to do so requires multiple 
 independent cosmological probes \cite{verde_tensions_2019}.
 
-One promising method uses %time delays of 
+One promising cosmological tool uses %time delays of 
 gravitational lens systems in which a background
 source appears as multiple images that arrive to the observer with relative delays \cite{einstein_lens_1936}.
 %, which %for a given lens potential 
 When such a strongly-lensed source is variable, one can measure the time delay between any pair of lensed images and derive a ratio of angular diameter distances to the foreground lens and background source. 
 This distance ratio is sensitive to cosmological parameters, such as 
 %the expansion rate of the universe, 
-$H_0$  and the dark energy equation of state, $w$ \cite{refsdal_possibility_1964,coe_cosmological_2009,linder_lensing_2011}.
-In recent years this method has been very successfully applied to lensed
+$H_0$  and the dark energy equation-of-state, $w$ \cite{refsdal_possibility_1964,coe_cosmological_2009,linder_lensing_2011}.
+In recent years this method has been successfully applied to lensed
 quasars \cite{suyu_cosmology_2014,bonvin_cosmograil_2019}, with six high-precision measurements to date \cite{wong_h0licow_2019}. As this sample of time delay lenses grows to several dozen, it is expected to deliver a measurement of $H_0$ with 1\% precision \cite{suyu_cosmological_2018}.  
 
-Gravitationally lensed SN with multiple images present an attractive new addition to this field. Most notably, SN exhibit relatively simple photometric behavior, with well-understood light curve shapes and colors---a contrast to the stochastic variation of quasars.  However, the exploration of lensed SN time delay cosmography has been hindered by their rarity.  To date, there have been only two lensed SN observed with multiple images \cite{kelly_multiple_2015,goobar_iptf16geu:_2017}. The first, {\it SN Refsdal}, was a peculiar Type II SN whose image with the longest delay was missed \cite{kelly_sn_2016}. The second, {\it SN 2016geu}, was a Type Ia SN with short delays that make high precision time delay measurements impossible \cite{dhawan_magnification_2019}. Here we present the discovery 
+Gravitationally lensed SN with multiple images present an attractive new addition to this field. Most notably, SN exhibit relatively simple photometric behavior, with well-understood light curve shapes and colors---in contrast to the stochastic variation of quasars.  However, despite the promise of lensed SN time delay cosmography as a cosmological distance probe, to date, there have been only two lensed SN observed with multiple images \cite{kelly_multiple_2015,goobar_iptf16geu:_2017}. The first, {\it SN Refsdal}, was a peculiar Type II SN whose image with the longest delay was missed \cite{kelly_sn_2016}. The second, {\it SN 2016geu}, was a Type Ia SN with short delays that make high precision time delay measurements impossible \cite{dhawan_magnification_2019}. Here we present the discovery 
 of a third lensed SN resolved into multiple images: \SNABC. 
 
-We discovered \SNABC using data from the Hubble Space Telescope (HST) program {\it REsolved QUIEscent Magnified Galaxies} (REQUIEM, HST-GO-15663, PI:Akhshik). This project targets rare examples of quiescent galaxies that have been magnified by strong gravitational lensing. %These are typically too faint and compact to be resolved even with Hubble, but due to lensing are magnified. This provides a unique opportunity to  understand the still mysterious quenching mechnism. 
+We discovered \SNABC ({\it AstroNotes citation})
+using data from the Hubble Space Telescope (HST) program {\it REsolved QUIEscent Magnified Galaxies} (REQUIEM, HST-GO-15663, PI:Akhshik). This project targets rare examples of massive galaxies with low specific star formation rates that have been magnified by strong gravitational lensing. %These are typically too faint and compact to be resolved even with Hubble, but due to lensing are magnified. This provides a unique opportunity to  understand the still mysterious quenching mechnism. 
 The brightest and most spectacular galaxy targeted by REQUIEM
 is MRG-M0138, first discovered as a massive red galaxy (MRG) at $z=1.95$ \cite{newman_resolving_2018} behind the massive galaxy cluster MACS J0138.0-2155 \cite{ebeling_macs_2001}.
-MRG-M0138 is quadruply lensed by the foreground cluster, which is at $z=0.338$.  
+MRG-M0138 is quadruply lensed by a foreground galaxy cluster at $z=0.338$.  
 During analysis of REQUIEM observations obtained 13--14 July 2019 \cite{materials_methods_2020} we discovered three point 
 sources that were present in archival HST images from 18--19 July 2016, part of the program 
 that first confirmed the MRG-M0138 galaxy as a strongly-lensed object (HST-GO-14496; PI:Newman). 
 Each point source is within 5 arcseconds of one of the four MRG-M0138 images.  None of the
-three point sources are present in the REQUIEM HST data in 2019 (Fig \ref{fig:layout}). We infer that 
+three point sources are present in the REQUIEM HST data in 2019 (Fig. \ref{fig:layout}). We infer that 
 the point sources are multiple images of a single astrophysical 
 transient in MRG-M0138, most likely a SN \cite{materials_methods_2020}.  
-%Hereafter we call this multiply-imaged transient \SNABC.
-The official designation for this multiply-imaged astrophysical transient is \SNABC.
+%The official designation for this multiply-imaged astrophysical transient is \TNSname. 
+%Formal designation as a SN requires spectroscopic confirmation, but with a high-confidence photometric classification we coin the name \SNABC for this unusual source.
 
-To construct a lens model for the MACS J0138.0-2155 cluster we used the publicly available \lenstool software \cite{jullo_bayesian_2007, kneib_lenstool_2011} to model the mass distribution in the cluster core as the combination of a cluster scale and multiple galaxy scale potentials \cite{materials_methods_2020}.  To avoid unintended bias, we kept the lens model development completely separate from the analysis of the SN.  Only upon independent completion of both were the results combined for the analysis described here.  The input model constraints are the positions and redshifts of the MRG-M0138 galaxy at $z=1.95$ (both the central light peak and the SN location in each image) as well as a multiply-imaged background 
+To construct a lens model for the MACS J0138.0-2155 cluster we use the \lenstool software \cite{jullo_bayesian_2007,kneib_lenstool_2011} to model the mass distribution in the cluster core as the combination of a cluster-scale and multiple galaxy-scale potentials \cite{materials_methods_2020}.  To avoid unintended bias, we kept the lens model development completely separate from the analysis of the SN.  Only upon independent completion of both were the results combined for the analysis described here.  The input model constraints are the positions and redshifts of the MRG-M0138 galaxy at $z=1.95$ (both the central light peak and the SN location in each image) as well as a multiply-imaged background 
 galaxy at $z=0.766$, both having secure spectroscopic redshifts \cite{materials_methods_2020}.  
 From this model we derive estimates for the lensing magnification and time delay of each of the SN images, including the predicted fourth image (Table \ref{tab:time_delays}).
 The lensing model predicts that the SN should appear in the fourth MRG-M0138 image in the year 2037$\pm$1.5, demagnified with $\mu=0.4\pm0.2$. The predicted location for this future image is $\alpha=01:38:04.15,\delta=-21:55:24.659$.
-A fifth image will also appear at a later date, located very near the center of the cluster and much more significantly demagnified, so therefore likely not observable.  
+A fifth image will also appear at date later still, located near the center of the cluster and much more significantly demagnified, so it will not be easily observable.  
  
- 
-%The range of possible transients for Requiem is broad, encompassing normal SNe, superluminous SNe (galyam luminous 2019), fast transients (berger fast 2013, drout rapidly 2014), and even gravitational microlensing events (rodney two 2018, kelly extreme 2018). 
 To realize the cosmological promise of \SNABC 
 we need to estimate the age of each SN image, which in turn constrains the lensing time delays. For this
-goal, it is valuable to have a firm determination of the transient’s class. Expected time delays and magnifications from the lens model exclude any of the various rapidly evolving and low-luminosity stellar transient classes, strongly suggesting that it is a SN. The first-order SN distinction remaining is between a Type Ia SN---the explosion of a white dwarf star in a binary system---and a core collapse SN (CCSN)---the end-point of a star with mass $\gtrsim 10 M_{\odot}$. 
+goal, it is necessary to have a firm determination of the transient’s class. Expected time delays and magnifications from the lens model exclude any of the various rapidly evolving and low-luminosity stellar transient classes, strongly suggesting that it is a SN. The first-order SN distinction remaining is between a Type Ia SN---the explosion of a white dwarf star in a binary system---and a core collapse SN (CCSN)---the end-point of a star with mass $>10 M_{\odot}$. 
 The properties of the host galaxy can inform this classification because CCSN are limited to galaxies with young stellar populations. Limits on the specific star formation rate and age for this host, MRG-M0138, show it to be a massive but very quiescent and evolved galaxy, %($\log(M_*/M_\odot)=11.7\pm0.2; )$ , 
-unlikely to retain any significant population of high-mass stars \cite{newman_resolving_2018}. Based on observed properties of the host galaxy alone, we find a 62-75\% probability that \SNABC is a Type Ia SN \cite{materials_methods_2020}. Adopting the lens model magnifications for the three observed SN images (Table \ref{tab:time_delays}) the position of each SN image in color-magnitude space (Figure \ref{fig:class}) provides more classification leverage, yielding p(Ia)=95\% \cite{materials_methods_2020}. By also including the model-predicted time delays, we can treat the three SN images effectively as three points on a common SN light curve, and we find p(Ia)=94\% \cite{materials_methods_2020}.
-%This is corroborated by the limited data available for the transient. In color -magnitude space it displays best agreement with the Type Ia population (Fig 1). 
+unlikely to retain any significant population of high-mass stars \cite{newman_resolving_2018}. Based on observed properties of the host galaxy alone, we find a 62-75\% probability that \SNABC is a Type Ia SN \cite{materials_methods_2020}. Adopting the lens model magnifications for the three observed SN images (Table \ref{tab:time_delays}) we can locate each SN image in color-magnitude space (Fig. \ref{fig:class}). This provides more classification leverage, yielding p(Ia)=95\% \cite{materials_methods_2020}. By also including the model-predicted time delays, we can treat the three SN images effectively as three points on a common SN light curve, and we find p(Ia)=94\% \cite{materials_methods_2020}.
 An improved classification can be achieved with spectroscopy and multi-band photometry upon arrival of the fourth image.
-
-
-%The galaxy has very low SFR=XX and based on stellar ages stopped forming stars ~X.X Gyr earlier. This is a proto typical early type galaxy progenitor.
-
-%%%%%% ORIGINAL Classification text
-% To evaluate the age of each transient image (and therefore constrain the lensing time delay between images), it is valuable to have a firm determination of the transient's class.  The range of possible transients is broad, encompassing normal SNe, superluminous SNe \citep{galyam_luminous_2019}, fast transients \citep{berger_fast_2013, drout_rapidly_2014}, and even gravitational microlensing events \citep{rodney_two_2018,kelly_extreme_2018}.  Identifying the transient type makes it possible to use the well-developed library of spectrophotometric SN models \citep[e.g.][]{kessler_models_2019} for the time delay measurement. 
-%  The first-order distinction that is most important is between a Type Ia SN--understood to be the explosion of a white dwarf star in a binary system--and core collapse SN (CCSN)--the end-point of a star with mass $\gtrsim 10$M$_{\odot}$.  Given the limited data available for this transient, we will not attempt a more fine-grained classification, though in principle that could be achieved with spectroscopy and multi-band photometry upon arrival of the final image.  
- 
-
-
-% As a first step, we can use inferences from the lens model to establish a strong prior against any of the various rapidly evolving and low-luminosity stellar transient classes.  
-% The expected time delays between the images are $\sim100$ observer-frame days, 
-% but we see that three images of the transient are visible simultaneously.
-% From this we can infer that the visibility time of the transient in the $z=1.95$ rest-frame must be at least $\sim$30 days. 
-% Similarly, with expected magnifications in the vicinity of $\mu\sim10$, the measured apparent magnitudes near 23 AB mag translate to a rest-frame absolute magnitude near $M_B \sim-19.5$ mag (too bright to be a nova, luminous blue variable, or other low-luminosity stellar transient).
-% Taken together, these indicators strongly suggest that the transient is a supernova (SN). 
-
-% Although we have invoked the lens model in this analysis, note that the inferences are not strongly dependent on the specific lens model predictions.  To make the observed transient images consistent with a fast or low-luminosity transient, the time delays and/or magnifications would have to be changed by more than a factor of 2.  In the analysis to follow, we will work under the assumption that the transient is a SN. 
-
-% \subsection{Host galaxy properties}
-% \label{ss:host}
-
-% We first seek to classify this transient {\it circumstantially}, using measured properties of the host galaxy stellar population to infer the type. Although Type Ia SNe are found in all types of galaxies, CCSNe are limited to galaxies with relatively young stellar populations.  We can therefore infer some information about the SN type using the observed host properties combined with knowledge of the relative rates of Type Ia and CCSNe in different stellar populations \citep{mannucci_rates_2005,foley_classifying_2013}.  In the case of the host galaxy MRG0138, we have very stringent limits on the star formation rate. This galaxy is a high-mass but very quiescent galaxy, with a specific star formation rate of $\sim10^{-11.3}$ yr$^{-1}$  and a stellar population that is well-matched by an exponential star formation history with an age of $1.4$ Gyr \cite{newman_resolving_2018}.  The massive stars that end as CCSN explosions have main-sequence lifetimes of $\lesssim 40$ Myr,  making it highly unlikely that MRG0138 retains any significant population of massive stars \SR{this should be revised, b/c of total mass.  Focus instead on the relative probability. as discussed on telecon}
-
-
-% Discussion from Newman et al. \citep{newman_resolving_2018-1}.
-
-% Conclusion: the host is a red-dead elliptical. It is most likely a Type Ia SN.
-
-% \subsection{Classification from Color and Brightness}
-% \label{ss:lightcurve}
-
-% Figure~\ref{fig:colormag} shows the location of \SNABC in color-magnitude space, comparing the de-magnified apparent F160W magnitude against the observed F105W-F160W color.  
-% For a source at $z=1.95$ the F160W band is centered near 5400 \AA, approximately corresponding to the Bessell V bandpass, while the F105W-F160W color approximates a U-V color. 
-% As shown in Figure~\ref{fig:colormag}, the observed photometry for \SNABC is fully consistent with the expected color and magnitude of a Type Ia SN at $z=1.95$, after correcting for lensing magnification using the $\mu$ values from Table~\ref{tab:model_evidence}.  The magnification-corrected photometry is inconsistent with Type II SNe, which are fainter and more blue. \SNABC is marginally consistent with the CCSN Type Ib/Ic sub-class, although the image 2 point falls outside of the 95\% confidence region for that population.  
-
-% The right panel in Figure~\ref{fig:colormag} shows that the three data points are also consistent with the expected time-dependence  of a Type Ia SN in this color-magnitude space. Visualizing the changing color and brightness of a SNIa at $z=1.95$ in the F105W and F160W bands, we see that it  would intersect image 2 near peak brightness and approach the image 1 and 3 photometry at roughly 80 observer-frame days after peak.  
-
-% Taken together, this evidence reinforces the conclusion that \SNABC is most likely a Type Ia SN.  Although we have to adopt a magnification correction 
-% from a lens model, this conclusion is not sensitive to the choice of lens model.  Every lens model we have evaluated locates \SNABC's un-magnified position squarely within the Type Ia region of color-magnitude space.  
-% Dust is also not a confounding factor here.  The simulations used to generate the contours in Figure~\ref{fig:colormag} include dust extinction at the source plane.  If a significant screen of dust exists in the lens plane, this would have the effect of making the SN appear dimmer and more red, so correcting for that extinction would move the \SNABC requiem points upward and leftward on this plot, causing it to be even more strongly associated with the Type Ia region. 
-
-% \SR{TODO: add an appendix explaining the sims}
-
 
 The color of a SNIa evolves substantially over its lifetime as the photosphere expands and cools, revealing different layers of the expanding shell and driving episodes of recombination \cite{woosley_type_2007,kasen_type_2009}. Since the phenomenon of gravitational lensing in general is achromatic, this color evolution makes it possible to derive an age constraint that is largely independent of the lens model \cite{materials_methods_2020}.  Combining this information with magnification constraints from the lens modeling helps break parameter degeneracies, yielding the measured delays in Table \ref{tab:time_delays} \cite{materials_methods_2020}. 
 Remarkably, the ages of image 1 and 3 are constrained to better than $\pm$20 days, despite having only a single epoch of photometric data.    These uncertainties may be 
 further reduced when the future fourth image is observed with high-precision, multi-epoch photometry.  Such a light curve will pin down the intrinsic SN light curve parameters that are shared by all images, and break remaining parameter degeneracies (see supplemental materials).
-%These constraints represent an upper limit on the age (and therefore time delay) uncertainties, but they would still deliver an uncertainty of $\sim0.3\%$ on the predicted $\sim6000$ day delay. While already dwarfed by the expected lens model uncertainty, constraints on the intrinsic SN light curve parameters gained from exquisite photometry of the future fourth image of Requiem could improve this even further. 
 
 Future large-scale surveys such as the Vera C. Rubin Observatory 
-%Legacy Survey of Space and Time (LSST) 
-and the Nancy Grace Roman Space Telescope will observe dozens to hundreds of lensed SN over their duration \cite{oguri_gravitationally_2010,goldstein_rates_2019,wojtak_magnified_2019}. However, many of these lensed SN will require substantial follow-up resources to be cosmologically useful. Furthermore, almost all will have significantly shorter 
-delays (of order 10-100 days) and therefore higher relative uncertainties than \SNABC.  Since it is the {\it fractional} time delay uncertainty that 
+and the Nancy Grace Roman Space Telescope will observe dozens to hundreds of lensed SN over their mission lifetimes \cite{oguri_gravitationally_2010,goldstein_rates_2019,wojtak_magnified_2019}. However, many of these lensed SN will require substantial follow-up resources to be made cosmologically useful. Furthermore, almost all will have significantly shorter 
+delays (of order 10--100 days) and therefore higher relative uncertainties than \SNABC.  Since it is the {\it fractional} time delay uncertainty that 
 propagates through to any time delay distance measurement, the extraordinarily long time delays of cluster-lensed SNe like SN Requiem can deliver significantly better time delay precision, with comparable observational cost.  In fact, the long time baseline of lensed SN like \SNABC effectively insures that their cosmological precision is not limited by the time delay measurement errors.  
 
 In Figure \ref{fig:cosmo} we illustrate the cosmological value of time delay cosmography with objects like \SNABC  by considering a small sample of 5 ``\reqlike'' SN.  For a comparison on equal footing, we evaluate equal-sized lensed SN samples 
 that mimic those expected from the Rubin Observatory and  the Roman Space Telescope.  Differences in the 
 ratio of source to lens redshift account for the different cosmological parameter covariances, reflected in the orientations of the contours in these plots. Because of the unusually large redshift ratio of \SNABC, the constraints 
-%on dark energy equation of state parameters ($w_0$, $w_a$) 
 from the \reqlike sample are nicely complementary to the low-$z$ Rubin Observatory and high-$z$ Roman Space Telescope samples. 
 Furthermore, when we assume that the lens modeling uncertainty is equal for each sample (amounting to a 5\% uncertainty in each time delay distance), the \reqlike sample has leverage that is comparable to the same number of lensed SN from the wide-field surveys. However, if we improve  the lensing constraints to 2\% precision, the \reqlike contours tighten dramatically, reflecting the fact that these long-time-baseline events are limited only by the lens modeling uncertainty.
 
+To achieve these cosmological constraints in practice, such a sample could be developed with regular monitoring of cluster-scale lenses, partnered with modest follow-up to characterize any lensed SN discovered.  As \SNABC shows, even a single epoch of photometric data at the time of detection may be sufficient to provide the necessary anchor point for this promising cosmological tool.  %After that, all we need is patience.
 
-To achieve these cosmological constraints in practice, such a sample could be developed with regular monitoring of cluster-scale lenses, partnered with modest follow-up to characterize any lensed SN discovered.  As \SNABC shows, even a single epoch of photometric data at the time of detection may be sufficient to provide the necessary anchor point for this promising cosmological tool.  After that, all we need is patience.
-
-
-
+HST observations enabled us to find this SN.  We anticipate that HST may be de-orbited and make its final plummet to Earth around the time of the reappearance of \TNSname, so we coin the name {\it SN  Requiem} as an ode to the vast new discovery space that HST continues to unveil.
 
 
 % Your references go at the end of the main text, and before the
@@ -274,23 +196,23 @@ To achieve these cosmological constraints in practice, such a sample could be de
 % was included to format the reference numbers according to *Science*
 % style.
 
-%BibTeX users: After compilation, comment out the following two lines and paste in
-% the generated .bbl file. 
+
 \clearpage
 \begin{figure*}
     \centering
     \includegraphics[draft=False,width=0.9\textwidth]{Paper/Figures/fig1_layout_sn4.pdf}
     \caption{Overview of the MACSJ0138 cluster field and the locations of the \SNABC images  (SN1--3) and its multiply-imaged host galaxy (H1--4). The wide-field view in $a)$ is 40\arcsec\ on a side with ticks indicating 10\arcsec\ intervals.  
     %Labels marked 3.1--3.4 indicate the locations of a separate  multiply-imaged [O\textsc{ii}]-emitter at $z=0.77$ used to help constrain the lensing potential. 
-    Panels \emph{b}--\emph{i} show 4\arcsec\ cutouts around the lensed SN images with 1\arcsec\ ticks.  The three-color images are generated from the WFC3/IR filters as indicated; panels \emph{bcde} show the imaging from 2016 July where the SN was visible and \emph{fghi} show the later imaging from 2019 July where the the SN has faded away.  Panels \emph{ei} indicate the location of the fourth image predicted to appear in $\approx$2037. All panels use the late-epoch F125W imaging for the green channel; nevertheless, it is immediately clear that the SN2 image is substantially bluer than the other two, helps to constrain the relative age of each SN image and the transient classification as a likely Type Ia supernova explosion.}
+    Panels \emph{b}--\emph{i} show 4\arcsec\ cutouts around the lensed SN images with 1\arcsec\ ticks.  The three-color images are generated from the WFC3/IR filters as indicated; panels \emph{bcde} show the imaging from 2016 July where the SN was visible and \emph{fghi} show the later imaging from 2019 July where the the SN has faded away.  Panels \emph{ei} indicate the location of the fourth image predicted to appear in $\approx$2037. All panels use the late-epoch F125W imaging for the green channel; nevertheless, it is immediately clear that the SN2 image is substantially bluer than the other two, which helps to constrain the relative age of each SN image and the transient classification as a likely Type Ia supernova explosion.}
     
     \label{fig:layout}
 \end{figure*}
 \clearpage
-\begin{figure}[h]
-    \centering
+\begin{figure}
+  \centering
     \includegraphics[draft=False, width=\textwidth]{Paper/Figures/classification_contours_timeline.pdf}
-    \caption{Classification information for SN Requiem based on its position in color-magnitude space. (left) Contours show the population distributions for normal SNe of Type Ia (red), Type Ib/Ic (gold), and Type II (green).  These population contours are drawn to enclose 68\% (interior solid lines) and 95\% (exterior shaded regions) of each SN population.  Each SN sub-class was simulated at $z=1.95$, and samples from their expected light curves were drawn uniformly in time. Open markers show the observed photometry of the SN. Dotted vertical lines mark the magnification correction based on the lens modeling, terminating in closed markers with error bars that show the magnitude uncertainty, which is dominated by the lens modeling uncertainty.  (right) The evolution of a typical Type Ia SN at $z=1.95$ in observed color-mag space is shown by a colored line, with the color indicating SN age in observer-frame days relative to peak brightness.  White diamonds correspond to the times labeled on the colorbar at right. Grey shading shows the typical range of luminosities observed for the Type Ia SN population in the nearby universe \cite{wang_determination_2006}. An interactive 3-D version of this figure is available online at \href{https://plot.ly/~jpierel/6}{https://plot.ly/~jpierel/6}
+    \caption{Classification information for SN Requiem based on its position in color-magnitude space. \emph{Left:} Contours show the population distributions for normal SNe of Type Ia (red), Type Ib/Ic (gold), and Type II (green), drawn to enclose 68\% (interior solid lines) and 95\% (exterior shaded regions) of each SN population.  Each SN sub-class was simulated at $z=1.95$, and samples from their expected light curves were drawn uniformly in time. Open markers show the observed photometry of the SN. Dotted vertical lines mark the lensing magnification correction, terminating in closed markers and solid bars that indicate the magnification in our preferred lens model and its systematic uncertainty, respectively.  \emph{Right:} The evolution of a typical Type Ia SN at $z=1.95$ in observed color-brightness space is shown by a colored line, with the line color indicating SN age in observer-frame days relative to peak brightness.  White diamonds correspond to the times labeled on the colorbar at right. Grey shading shows the typical range of luminosities observed for the Type Ia SN population in the nearby universe \cite{wang_determination_2006}. 
+    %An interactive 3-D version of this figure is available online at \href{https://plot.ly/~jpierel/6}{https://plot.ly/~jpierel/6}
     \label{fig:class}
     }
 \end{figure}
@@ -300,7 +222,8 @@ To achieve these cosmological constraints in practice, such a sample could be de
     \centering
     \includegraphics[draft=False,trim={2cm, 3cm, 3cm, 4cm},clip,width=\textwidth]{Paper/Figures/snrequiem_hw_w0wa_apples_to_lsst_ngrst_4panel.pdf}
     \caption{  
-    The sensitivity of \SNABC to the expansion rate of the universe ($H_0$) and dark energy equation of state parameters ($w_0, w_a$). Dashed lines and the white marker show the input values (upper right of the top panels) that were used for this simulation. Contours show the 1$\sigma$ confidence region for a projected sample of 5 lensed SNIa time delays from the Rubin Observatory (blue) and the Roman Space Telescope (red) compared to 5 events like \SNABC (black).  The left and right columns assume a 5\% and 2\% contribution to the distance uncertainty from modeling the lens potential, respectively. Improving the lens modeling tightens the cosmological constraints for all three samples, but the improvement for the \SNABC-like sample is the most significant.  This is simply because the long time delay baseline for \SNABC makes the time delay uncertainty negligible, raising the ceiling for cosmological improvement with tighter lens modeling constraints.  In order to isolate the plotted parameters, all contours are constructed assuming perfect knowledge of the cosmological parameters that are not shown. 
+    The sensitivity of \SNABC to the expansion rate of the universe ($H_0$) and dark energy equation-of-state parameters ($w_0, w_a$). Dashed lines and the white marker show the input values (upper right of the top panels) that were used for this simulation. Contours show the 1$\sigma$ confidence region for a projected sample of 5 lensed SNIa time delays from the Rubin Observatory (blue) and the Roman Space Telescope (red) compared to 5 events like \SNABC (black).  The left and right columns assume a 5\% and 2\% contribution to the distance uncertainty from modeling the lens potential, respectively. 
+    In order to isolate the plotted parameters, all contours are constructed assuming perfect knowledge of the cosmological parameters that are not shown. 
     }
     \label{fig:cosmo}
 \end{figure}
@@ -317,9 +240,9 @@ To achieve these cosmological constraints in practice, such a sample could be de
     &\multicolumn{1}{c}{$\mathbf{t_i-t_1}$}\\
     
 \midrule
-\textit{1}  & $112^{+20}_{-38}$ & -- & $3.9\pm0.5$ & --\\
-\textit{2} & $-27^{+26}_{-6}$ & $139^{+63}_{-23}$ & $7\pm3$ & $101\pm62$ \\
-\textit{3} & $88^{+15}_{-15}$ & $16^{+19}_{-19}$ & $5\pm1$ & $19\pm34$ \\
+\textit{1}  & $99^{+27}_{-29}$ & -- & $3.9\pm0.5$ & --\\
+\textit{2} & $-19^{+21}_{-13}$ & $114^{+39}_{-42}$ & $7\pm3$ & $101\pm62$ \\
+\textit{3} & $87^{+15}_{-13}$ & $11\pm23$ & $5\pm1$ & $19\pm34$ \\
 \textit{4} & -- & -- & $0.4\pm0.2$ & $7760\pm540$\\
 
 % 2020.06.19  OLD DATA (prior to MODEL H) with time delays referenced to image 2.
@@ -331,18 +254,290 @@ To achieve these cosmological constraints in practice, such a sample could be de
 \caption{\label{tab:time_delays}Time Delays.  The combination of the models for the light curve evolution and the lens time delays implies a date of $2037\pm2$ for the peak brightness of Image 4.}
 \end{table}
 
+%BibTeX users: After compilation, comment out the following two lines and paste in
+% the generated .bbl file. 
+%%%%%%%%%%%% Bibliography
+%\bibliography{references}
+%\bibliographystyle{Science}
+\begin{thebibliography}{10}
 
-\bibliography{references}
+\bibitem{riess_observational_1998}
+A.~G. Riess, {\it et~al.\/}, {\it The Astronomical Journal\/} {\bf 116}, 1009
+  (1998).
 
-\bibliographystyle{Science}
+\bibitem{perlmutter_measurements_1999}
+S.~Perlmutter, {\it et~al.\/}, {\it The Astrophysical Journal\/} {\bf 517}, 565
+  (1999).
+
+\bibitem{Riess_large_2019}
+A.~G. Riess, S.~Casertano, W.~Yuan, L.~M. Macri, D.~Scolnic, {\it The
+  Astrophysical Journal\/} {\bf 876}, 85 (2019).
+
+\bibitem{amendola_cosmology_2013}
+L.~Amendola, {\it et~al.\/}, {\it Living Reviews in Relativity\/} {\bf 16}, 6
+  (2013).
+
+\bibitem{spergel_wide_2015}
+D.~Spergel, {\it et~al.\/}, {\it arXiv e-prints\/} {\bf arXiv:1503.03757}
+  (2015).
+
+\bibitem{Ivezic_lsst_2019}
+Ivezic, {\it et~al.\/}, {\it The Astrophysical Journal\/} {\bf 873}, 111
+  (2019).
+
+\bibitem{aghanim_planck_2018}
+{Planck Collaboration}, {\it et~al.\/}, {\it arXiv e-prints\/} {\bf
+  arXiv:1807.06209} (2018).
+
+\bibitem{verde_tensions_2019}
+L.~Verde, T.~Treu, A.~G. Riess, {\it Nature Astronomy\/} {\bf 3}, 891 (2019).
+
+\bibitem{einstein_lens_1936}
+A.~Einstein, {\it Science\/} {\bf 84}, 506 (1936).
+
+\bibitem{refsdal_possibility_1964}
+S.~Refsdal, {\it Monthly Notices of the Royal Astronomical Society\/} {\bf
+  128}, 307 (1964).
+
+\bibitem{coe_cosmological_2009}
+D.~Coe, L.~A. Moustakas, {\it The Astrophysical Journal\/} {\bf 706}, 45
+  (2009).
+
+\bibitem{linder_lensing_2011}
+E.~V. Linder, {\it Physical Review D\/} {\bf 84}, 123529 (2011).
+
+\bibitem{suyu_cosmology_2014}
+S.~H. Suyu, {\it et~al.\/}, {\it The Astrophysical Journal\/} {\bf 788}, L35
+  (2014).
+
+\bibitem{bonvin_cosmograil_2019}
+V.~Bonvin, {\it et~al.\/}, {\it Astronomy \& Astrophysics\/} {\bf 629}, A97
+  (2019).
+
+\bibitem{wong_h0licow_2019}
+K.~C. Wong, {\it et~al.\/}, {\it arXiv e-prints\/} {\bf arXiv:1907.04869}
+  (2019).
+
+\bibitem{suyu_cosmological_2018}
+S.~H. Suyu, T.-C. Chang, F.~Courbin, T.~Okumura, {\it Space Science Reviews\/}
+  {\bf 214}, 91 (2018).
+
+\bibitem{kelly_multiple_2015}
+P.~L. Kelly, {\it et~al.\/}, {\it Science\/} {\bf 347}, 1123 (2015).
+
+\bibitem{goobar_iptf16geu:_2017}
+A.~Goobar, {\it et~al.\/}, {\it Science\/} {\bf 356}, 291 (2017).
+
+\bibitem{kelly_sn_2016}
+P.~L. Kelly, {\it et~al.\/}, {\it The Astrophysical Journal\/} {\bf 831}, 205
+  (2016).
+
+\bibitem{dhawan_magnification_2019}
+S.~Dhawan, {\it et~al.\/}, {\it Monthly Notices of the Royal Astronomical
+  Society\/} 491, 2639 (2020).
+
+\bibitem{newman_resolving_2018}
+A.~B. Newman, S.~Belli, R.~S. Ellis, S.~G. Patel, {\it The Astrophysical
+  Journal\/} {\bf 862}, 126 (2018).
+
+\bibitem{ebeling_macs_2001}
+H.~Ebeling, A.~C. Edge, J.~P. Henry, {\it The Astrophysical Journal\/} {\bf
+  553}, 668 (2001).
+
+\bibitem{materials_methods_2020}
+Materials and methods are available as supplementary materials at the {Science}
+  website.
+
+\bibitem{jullo_bayesian_2007}
+E.~Jullo, {\it et~al.\/}, {\it New Journal of Physics\/} {\bf 9}, 447 (2007).
+
+\bibitem{kneib_lenstool_2011}
+J.-P. Kneib, {\it et~al.\/} LENSTOOL: A Gravitational Lensing Software for Modeling Mass Distribution of Galaxies and Clusters, ascl:1102.004 (2011).
+
+\bibitem{woosley_type_2007}
+S.~E. Woosley, D.~Kasen, S.~Blinnikov, E.~Sorokina, {\it The Astrophysical
+  Journal\/} {\bf 662}, 487 (2007).
+
+\bibitem{kasen_type_2009}
+D.~Kasen, S.~E. Woosley, {\it The Astrophysical Journal\/} {\bf 703}, 2205
+  (2009).
+
+\bibitem{oguri_gravitationally_2010}
+M.~Oguri, P.~J. Marshall, {\it Monthly Notices of the Royal Astronomical
+  Society\/} {\bf 405}, 2579 (2010).
+
+\bibitem{goldstein_rates_2019}
+D.~A. Goldstein, P.~E. Nugent, A.~Goobar, {\it The Astrophysical Journal
+  Supplement Series\/} {\bf 243}, 6 (2019).
+
+\bibitem{wojtak_magnified_2019}
+R.~Wojtak, J.~Hjorth, C.~Gall, {\it Monthly Notices of the Royal Astronomical
+  Society\/} {\bf 487}, 3342 (2019).
+
+\bibitem{wang_determination_2006}
+X.~Wang, L.~Wang, R.~Pain, X.~Zhou, Z.~Li, {\it The Astrophysical Journal\/}
+  {\bf 645}, 488 (2006).
+
+\bibitem{gonzaga_drizzlepac_2012}
+S.~Gonzaga, {et al.}, {\it The {DrizzlePac} handbook\/}, HST Data Handbook (2012).
+
+\bibitem{the_astropy_collaboration_astropy_2018}
+{The Astropy Collaboration}, {\it et~al.\/}, {\it The Astronomical Journal\/}
+  {\bf 156}, 123 (2018).
+
+\bibitem{weilbacher_data_2020}
+P.~M. Weilbacher, {\it et~al.\/}, {\it arXiv e-prints\/} {\bf arXiv:2006.08638}
+  (2020).
+
+\bibitem{bacon_muse_2017}
+R.~Bacon, {\it et~al.\/}, {\it Astronomy \& Astrophysics\/} {\bf 608}, A1
+  (2017).
+
+\bibitem{soto_zap_2016}
+K.~T. Soto, S.~J. Lilly, R.~Bacon, J.~Richard, S.~Conseil, {\it Monthly Notices
+  of the Royal Astronomical Society\/} {\bf 458}, 3210 (2016).
+
+\bibitem{piqueras_mpdaf_2019}
+L.~Piqueras, {\it et~al.\/}, {\it Astronomical data analysis software and
+  systems {XXVI}\/}, M.~Molinaro, K.~Shortridge, F.~Pasian, eds. (2019), vol.
+  521 of {\it Astronomical society of the pacific conference series\/}, p. 545.
+
+\bibitem{mahler_strong_2018}
+G.~Mahler, {\it et~al.\/}, {\it Monthly Notices of the Royal Astronomical
+  Society\/} {\bf 473}, 663 (2018).
+
+\bibitem{lagattuta_probing_2019}
+D.~J. Lagattuta, {\it et~al.\/}, {\it Monthly Notices of the Royal Astronomical
+  Society\/} {\bf 485}, 3738 (2019).
+
+\bibitem{richard_mass_2014}
+J.~Richard, {\it et~al.\/}, {\it Monthly Notices of the Royal Astronomical
+  Society\/} {\bf 444}, 268 (2014).
+
+\bibitem{richard_locuss_2010}
+J.~Richard, {\it et~al.\/}, {\it Monthly Notices of the Royal Astronomical
+  Society\/} {\bf 404}, 325 (2010).
+
+\bibitem{mannucci_supernova_2005}
+F.~Mannucci, {\it et~al.\/}, {\it Astronomy \& Astrophysics\/} {\bf 433}, 807
+  (2005).
+
+\bibitem{newman_resolving_2018-1}
+A.~B. Newman, S.~Belli, R.~S. Ellis, S.~G. Patel, {\it The Astrophysical
+  Journal\/} {\bf 862}, 125 (2018).
+
+\bibitem{foley_classifying_2013}
+R.~J. Foley, K.~Mandel, {\it The Astrophysical Journal\/} {\bf 778}, 167
+  (2013).
+
+\bibitem{smartt_progenitors_2009}
+S.~J. Smartt, {\it Annual Review of Astronomy and Astrophysics\/} {\bf 47}, 63
+  (2009).
+
+\bibitem{li_rates_2012}
+X.~Li, J.~Hjorth, J.~Richard, {\it Journal of Cosmology and Astroparticle
+  Physics\/} {\bf 2012}, 015 (2012).
+
+\bibitem{barbary_sncosmo_2016}
+K.~Barbary, {\it et~al.\/}, Sncosmo/{Sncosmo}: {V1}.4.0 (2016).
+
+\bibitem{rodney_type_2014}
+S.~A. Rodney, {\it et~al.\/}, {\it The Astronomical Journal\/} {\bf 148}, 13
+  (2014).
+
+\bibitem{guy_salt2:_2007}
+J.~Guy, {\it et~al.\/}, {\it Astronomy \& Astrophysics\/} {\bf 466}, 11 (2007).
+
+\bibitem{pierel_extending_2018}
+J.~D.~R. Pierel, {\it et~al.\/}, {\it Publications of the Astronomical Society
+  of the Pacific\/} {\bf 130}, 114504 (2018).
+
+\bibitem{kessler_snana:_2009}
+R.~Kessler, {\it et~al.\/}, {\it Publications of the Astronomical Society of
+  the Pacific\/} {\bf 121}, 1028 (2009).
+
+\bibitem{frieman_sloan_2008}
+J.~A. Frieman, {\it et~al.\/}, {\it The Astronomical Journal\/} {\bf 135}, 338
+  (2008).
+
+\bibitem{sako_sloan_2008}
+M.~Sako, {\it et~al.\/}, {\it The Astronomical Journal\/} {\bf 135}, 348
+  (2008).
+
+\bibitem{dandrea_type_2010}
+C.~B. D'Andrea, {\it et~al.\/}, {\it The Astrophysical Journal\/} {\bf 708},
+  661 (2010).
+
+\bibitem{astier_supernova_2006}
+P.~Astier, {\it et~al.\/}, {\it Astronomy \& Astrophysics\/} {\bf 447}, 31
+  (2006).
+
+\bibitem{hamuy_carnegie_2006}
+M.~Hamuy, {\it et~al.\/}, {\it Publications of the Astronomical Society of the
+  Pacific\/} {\bf 118}, 2 (2006).
+
+\bibitem{stritzinger_he-rich_2009}
+M.~Stritzinger, {\it et~al.\/}, {\it The Astrophysical Journal\/} {\bf 696},
+  713 (2009).
+
+\bibitem{morrell_carnegie_2012}
+N.~I. Morrell, {\it Death of massive stars: {Supernovae} and gamma-ray
+  bursts\/}, P.~Roming, N.~Kawai, E.~Pian, eds. (2012), vol. 279 of {\it {IAU}
+  symposium\/}, pp. 361--362.
+
+\bibitem{pierel_turning_2019}
+J.~D.~R. Pierel, S.~Rodney, {\it The Astrophysical Journal\/} {\bf 876}, 107
+  (2019).
+
+\bibitem{huber_strongly_2019}
+S.~Huber, {\it et~al.\/}, {\it Astronomy \& Astrophysics\/} {\bf 631}, A161
+  (2019).
+
+\bibitem{goldstein_precise_2018}
+D.~A. Goldstein, P.~E. Nugent, D.~N. Kasen, T.~E. Collett, {\it The
+  Astrophysical Journal\/} {\bf 855}, 22 (2018).
+
+\bibitem{foxley-marrable_impact_2018}
+M.~Foxley-Marrable, T.~E. Collett, G.~Vernardos, D.~A. Goldstein, D.~Bacon,
+  {\it Monthly Notices of the Royal Astronomical Society\/} {\bf 478}, 5081
+  (2018).
+
+\bibitem{bonvin_impact_2019}
+V.~Bonvin, {\it et~al.\/}, {\it Astronomy \& Astrophysics\/} {\bf 621}, A55
+  (2019).
+
+\bibitem{kochanek_quantitative_2004}
+C.~S. Kochanek, {\it The Astrophysical Journal\/} {\bf 605}, 58 (2004).
+
+\bibitem{vernardos_joint_2018}
+G.~Vernardos, {\it Monthly Notices of the Royal Astronomical Society\/} {\bf
+  480}, 4675 (2018).
+
+\bibitem{hsiao_k_2007}
+E.~Y. Hsiao, {\it et~al.\/}, {\it The Astrophysical Journal\/} {\bf 663}, 1187
+  (2007).
+
+\bibitem{kessler_results_2010}
+R.~Kessler, {\it et~al.\/}, {\it Publications of the Astronomical Society of
+  the Pacific\/} {\bf 122}, 1415 (2010).
+
+\bibitem{mosher_cosmological_2014}
+J.~Mosher, {\it et~al.\/}, {\it The Astrophysical Journal\/} {\bf 793}, 16
+  (2014).
+
+\end{thebibliography}
 
 
 
-
-
+%%%%%%%%%%%% Acknowledgents
 \section*{Acknowledgments}
 
-Based on observations made with the NASA/ESA Hubble Space Telescope, obtained from the data archive at the Space Telescope Science Institute, and on observations collected at the European Organisation for Astronomical Research in the Southern Hemisphere under ESO programme 0103.A-0777(A).  Support for this work was provided by NASA through grant number HST-GO-15663 from the Space Telescope Science Institute, which is operated by the Association of Universities for Research in Astronomy, Inc. under NASA contract NAS 5-26555.  The Cosmic Dawn Center of Excellence funded by the Danish National Research Foundation under grant No. 140.
+Based on observations made with the NASA/ESA Hubble Space Telescope, obtained from the data archive at the Space Telescope Science Institute, and on observations collected at the European Organisation for Astronomical Research in the Southern Hemisphere under ESO programme 0103.A-0777(A).  
+{\bf Funding:} Support for this work was provided by NASA through grant numbers HST-GO-15663 and HST-AR-15050 from the Space Telescope Science Institute, which is operated by the Association of Universities for Research in Astronomy, Inc. under NASA contract NAS 5-26555.  The Cosmic Dawn Center of Excellence is funded by the Danish National Research Foundation under grant No. 140. This work was supported by NASA Headquarters under the NASA Future Investigators in Earth and Space Science and Technology (FINESST) award 80NSSC19K1414. 
+{\bf Author Contributions:} 
+Conceptualization, S.A.R., G.B., and S.T.; Methodology, S.A.R., J.D.R.P., J.R., and K.F.O.; Investigation, G.B., J.R., S.T., M.A., and K.E.W.; Writing - Original Draft, G.B.\ and S.T.; Writing - Review \& Editing, S.A.R., G.B., J.D.R.P., J.R., S.T., K.F.O., M.A., and K.E.W.; Visualization, S.A.R., G.B., J.D.R.P., J.R., K.F.O.; Supervision, G.B., S.T., and K.E.W.; Funding Acquisition, K.E.W.
+{\bf Competing Interests:} All authors declare no competing interests.
+{\bf Data and Materials Availability:} All HST images used in this work are available from the Mikulski Archive for Space Telescopes (mast.stsci.edu). All VLT MUSE spectroscopic data used in this work are available from  the ESO Archive Science Portal (archive.eso.org).  All high-level science products (photometry, lens model inputs, etc.) are available in the main text or the supplementary materials.  All software tools used for primary analysis tasks are publicly available, as indicated in the text.
 
 %Here you should list the contents of your Supplementary Materials -- below is an example. 
 %You should include a list of Supplementary figures, Tables, and any references that appear only in the SM. 
@@ -353,15 +548,52 @@ Based on observations made with the NASA/ESA Hubble Space Telescope, obtained fr
 \section*{Supplementary materials}
 Materials and Methods\\
 Supplementary Text\\
-Figs. S1 to S9\\
+Figures S1 to S8\\
 Tables S1 to S7\\
-References \textit{(4-10)}
+References \textit{(32-68)}
 \clearpage
 \setcounter{table}{0}
 \renewcommand{\thetable}{S\arabic{table}}
 
 \setcounter{figure}{0}
 \renewcommand{\thefigure}{S\arabic{figure}}
+
+\setcounter{page}{1}
+
+\section*{Supplementary Materials for}
+{\bf \large A Gravitationally Lensed Supernova with an Observable Two-Decade Time Delay}
+
+
+\author{
+ Steven A. Rodney$^{1\ast}$, 
+ Gabriel Brammer$^{2\ast}$,  
+ Justin D.\,R.~Pierel$^{1}$, 
+ Johan Richard$^{3}$, 
+ Sune Toft$^{2}$,  
+ Kyle F. O'Connor$^{1}$, 
+ Mohammad Akhshik$^{4}$, 
+ Katherine E. Whitaker$^{2,4,5}$  \\
+\normalsize{$^{1}$Department of Physics \& Astronomy, University of South Carolina,} \normalsize{ Columbia, SC 29208, USA}\\
+\normalsize{$^{2}$Cosmic Dawn Center, Niels Bohr Institute, University of Copenhagen,} \normalsize{Lyngbyvej 2, Copenhagen \O\ 2100 Denmark}\\
+\normalsize{$^{3}$Univ Lyon, Univ Lyon1, Ens de Lyon, CNRS, Centre de Recherche Astrophysique de Lyon \normalsize{UMR5574, F-69230, Saint-Genis-Laval, France}\\
+\normalsize{$^{4}$Department of Physics, University of Connecticut,} \normalsize{Storrs, CT 06269, USA}\\
+\normalsize{$^{5}$Department of Astronomy, University of Massachusetts,} \normalsize{Amherst, MA 01003, USA}\\
+\normalsize{$^\ast$To whom correspondence should be addressed;}\\ \normalsize{E-mail:  srodney@sc.edu, gabriel.brammer@nbi.ku.dk}
+}
+
+\subsection*{This PDF file includes:}
+
+Materials and Methods\\
+Supplementary Text\\
+Figures S1 to S8\\
+Tables S1 to S7\\
+References \textit{(32-68)}
+
+
+\clearpage
+
+
+
 % For your review copy (i.e., the file you initially send in for
 % evaluation), you can use the {figure} environment and the
 % \includegraphics command to stream your figures into the text, placing
@@ -373,22 +605,22 @@ References \textit{(4-10)}
 % submit figures as separate files according to the Art Department's
 % instructions.
 
+
 \section*{Materials and Methods}
-%\todo[inline]{I'm not really sure what this section is for, or if we need it (commented out is the description from science about what this should be)}
-% The materials and methods section should provide sufficient information to allow replication of the study. It should be cited at relevant points in the text using a citation number that refers to a note in the reference list that reads “Materials and methods are available as supplementary materials at the Science website.” Study design should be described in detail and descriptions of reagents and equipment should facilitate replication (for example source and purity of reagents should be specified, there should be evidence that antibodies have been validated, and cell lines should be authenticated). Clinical and preclinical studies should include a section titled Experimental Design at the beginning of materials and methods in which the objectives and design of the study, as well as prespecified components, are described. Statistical methods must be described with enough detail to enable a knowledgeable reader with access to the original data to verify the results. The values for N, P, and the specific statistical test performed for each experiment should be included in the appropriate figure legend or main text.  Please see our editorial policies for additional guidelines for specific types of studies as well as further details on reporting of statistical analysis. For papers in the life sciences that involve a method that would benefit from the publication of a step-by-step protocol, we encourage authors to consider submitting a detailed protocol to our collaborative partner Bio-protocol.
+
 
 \subsection*{Observations of the SN and Lensing System}
 
-The observations of MRG0138 used in this work are  summarized in Table \ref{tab:observations}.   For this work, all HST observations were processed using the {\tt Drizzlepac} software utilities \cite{gonzaga_drizzlepac_2012}, aligned to a common astrometric reference frame and resampled to a pixel scale of 0.1 arcseconds per pixel.  We then identified isolated and unsaturated stars in each image and used them to create an effective point spread function (ePSF) with $4\times$ oversampling, using the {\tt photutils} package from the {\tt astropy} software suite \cite{astropy_astropy_2013}.   
+The observations of MRG0138 used in this work are  summarized in Table \ref{tab:observations}.   We processed all HST observations using the {\tt Drizzlepac} software utilities \cite{gonzaga_drizzlepac_2012}, aligned to a common astrometric reference frame and resampled to a pixel scale of 0.1 arcseconds per pixel.  We then identified isolated and unsaturated stars in each image and used them to create an effective point spread function (ePSF) with $4\times$ oversampling, using the {\tt photutils} package from the {\tt astropy} software suite \cite{the_astropy_collaboration_astropy_2018}.   
 
-To measure the SN photometry we followed two tracks.  As our primary method we performed ePSF fitting directly on the F105W (Y band) and F160W (H band) images where the SN was apparent.  This ePSF fitting allowed for a constant background flux to account for both the sky brightness and the background light of the cluster and host galaxy.  
-As a second approach, we created ``pseudo-difference images'' by rescaling the later F110W and F140W images collected in 2019 (in which the SN is not present).  The transmission functions of the F110W and F140W filters are broader than F105W and F160W, and do not strictly overlap in wavelength.  The optimal scaling factor to produce a clean subtraction therefore depends on the spectral energy distribution of the source.  We set the scaling to 0.62 and 1.17 for F110W-to-F105W and F140W-to-F160W, respectively.  These values produced visually clean subtractions of the SN host galaxy MRG0138---meaning that they minimize the residual flux from MRG0138 left behind in the pseudo-difference images.  We then performed ePSF fitting on the SN in each pseudo-difference image, using the same ePSF model as before.   Both sets of photometry agree to within one standard deviation.  The reported photometry in Table~\ref{tab:photometry} are the measurements from the first method (collected directly from the unsubtracted images).
+To measure the SN photometry we followed two tracks.  As our primary method we performed ePSF fitting directly on the F105W ($Y$ band) and F160W ($H$ band) images where the SN was apparent.  This ePSF fitting allowed for a constant background flux to account for both the sky brightness and the background light of the cluster and host galaxy.  
+As a second approach, we created ``pseudo-difference images'' by re-scaling the later F110W and F140W images collected in 2019 (in which the SN is not present).  The transmission functions of the F110W and F140W filters are broader than F105W and F160W, and do not strictly overlap in wavelength.  The optimal scaling factor to produce a clean subtraction therefore depends on the spectral energy distribution of the source.  We set the scaling to 0.62 and 1.17 for F110W-to-F105W and F140W-to-F160W, respectively.  These values produced visually clean subtractions of the SN host galaxy MRG0138---meaning that they minimize the residual flux from MRG0138 left behind in the pseudo-difference images.  We then performed ePSF fitting on the SN in each pseudo-difference image, using the same ePSF model as before.   Both sets of photometry agree to within one standard deviation.  The reported photometry in Table~\ref{tab:photometry} are the measurements from the first method (collected directly from the un-subtracted images).  Also reported in Table~\ref{tab:photometry} are flux densities and uncertainties measured within $D=0.^{\prime\prime}7$ circular apertures at the position of the SN1 image in the 2019 \textit{HST} visits where the SN has faded below the detection threshold.
 
-\begin{table}[h]
+\begin{table}[ht]
 \centering
 \begin{tabular}{ccccccr}
-    \multicolumn{1}{c}{Telescope} & \multicolumn{1}{c}{Instrument} & \multicolumn{1}{c}{$\lambda_\mathrm{obs}$} & \multicolumn{1}{c}{UT Date} & \multicolumn{1}{c}{MJD} & \multicolumn{1}{c}{SN} & \multicolumn{1}{c}{Exp. Time (s)}\\
-
+    \multicolumn{1}{c}{Telescope} & \multicolumn{1}{c}{Instrument} & \multicolumn{1}{c}{$\lambda_\mathrm{obs}$} & \multicolumn{1}{c}{UT Date} & \multicolumn{1}{c}{MJD} & \multicolumn{1}{c}{SN} & \multicolumn{1}{c}{Exp. Time}\\
+ & & & & & & \multicolumn{1}{c}{[s]}\\
 \midrule
 \textit{Spitzer} & IRAC      & $3.6\,\mu\mathrm{m}$      & 2016-03-15 03:44:04 & 57462.156 &   & 212 \\ % AOR r58785536
 \textit{Spitzer} & IRAC      & $4.5\,\mu\mathrm{m}$      & 2016-03-15 03:44:04 & 57462.156 &   & 241 \\
@@ -412,7 +644,7 @@ The two observations from which three images of the SN were detected are marked 
 }
 \end{table}
 
-\begin{table}[h]
+\begin{table}[ht]
 \centering
 \begin{tabular}{cccc}
 Image & Obs. Date (MJD) & Filter & Flux density ($\mu$Jy) \\
@@ -425,7 +657,7 @@ SN2 & 57587.97 & F160W ($H$) & 3.57  $\pm$ 0.05 \\
 SN3 & 57587.97 & F160W ($H$) & 1.13  $\pm$ 0.04 \\
 \midrule
 SN1 & 58677.87 & F110W ($Y$) & 0.01  $\pm$ 0.02 \\
-SN1 & 58678.93 & F140W ($H$) & 0.02  $\pm$ 0.02 \\
+SN1 & 58678.93 & F140W ($JH$) & 0.02  $\pm$ 0.02 \\
 SN1 & 58683.89 & F125W ($J$) & 0.02  $\pm$ 0.03 \\
 \end{tabular}
 \caption{Photometry of the SN in MRG0138.  The final three rows indicate ``empty'' aperture flux densities measured at the position of SN1 in the 2019 \textit{HST} visits.
@@ -436,29 +668,31 @@ SN1 & 58683.89 & F125W ($J$) & 0.02  $\pm$ 0.03 \\
 \label{sec:vltmuse}
 
 We make use of integral field spectroscopic data obtained on the cluster core of MRG0138 with VLT/MUSE, publicly 
-available as part of the program 0103.A-0777(A) (PI: Edge). Three exposures of 970 sec each were taken with a small dithering offset and 90 degree rotations in between. This dataset was reduced and analysed using the MUSE data reduction pipeline v.2.7 \cite{weilbacher_data_2020} for basic calibration (bias, flat-field, wavelength, LSF, geometry) as well as flux calibration, sky subtraction and astrometry. We  also make use of the self-calibration technique \cite{bacon_muse_2017}  to remove illumination systematics, specifically tuned for the case of crowded fields in the central region of galaxy clusters (Richard et al. in prep.). The combined datacube is then processed through {\tt ZAP} \cite{soto_zap_2016} which applies a PCA technique to remove sky subtraction residuals. The final datacube covers the central 1x1 arcmin$^2$ around the cluster center with 0.2\arcsec$\times$0.2\arcsec$\times$1.25\AA\ pixels.
+available as part of the program 0103.A-0777(A) (PI: Edge). Three exposures of 970\,sec each were taken with a small dithering offset and 90 degree rotations in between. This dataset was reduced and analysed using the MUSE data reduction pipeline v.2.7 \cite{weilbacher_data_2020} for basic calibration (bias, flat-field, wavelength, LSF, geometry) as well as flux calibration, sky subtraction and astrometry.  We  also make use of the self-calibration technique \cite{bacon_muse_2017} to remove illumination systematics, specifically tuned for the case of crowded fields in the central region of galaxy clusters (Richard et al. in prep.). The combined datacube is then processed through {\tt ZAP} \cite{soto_zap_2016} which applies a PCA technique to remove sky subtraction residuals. The final datacube covers the central 1x1 arcmin$^2$ around the cluster center with 0.2\arcsec$\times$0.2\arcsec$\times$1.25\AA\ pixels.
 
 We have extracted spectra for each HST detected source and inspected them for redshift measurements. In addition, we have run the {\tt muselet} software (publicly available as part of the MPDAF package \cite{piqueras_mpdaf_2019}\footnote{\url{https://mpdaf.readthedocs.io/en/latest/muselet.html}}) to search for line emitters not directly associated with HST sources \cite{mahler_strong_2018,lagattuta_probing_2019}. Apart from the lensed quiescent galaxy, we measured spectroscopic redshifts for cluster members and one ring-like background galaxy north of the BCG at $z=0.766$.
 
 \subsection*{Lens Modeling}
 %\todo[inline]{Fill in details of lens models here.}
 
-In order to correctly estimate the magnification factors, time delays, and predict the appearance of the future images of MRG0138-SN we need to precisely model the mass distribution in the MRG0138 cluster core. To do so we make use of the latest version of \lenstool \cite{jullo_bayesian_2007}\footnote{publicly available at \url{ https://git-cral.univ-lyon1.fr/lenstool/lenstool}}, which performs a Bayesian analysis with an MCMC sampler to estimate the best fit and error on each parameter of the mass distribution. 
+In order to correctly estimate the magnification factors, time delays, and predict the appearance of the future images of \SNABC we need to precisely model the mass distribution in the MACSJ0138 cluster core. To do so we make use of the latest version of \lenstool \cite{jullo_bayesian_2007}\footnote{publicly available at \url{ https://git-cral.univ-lyon1.fr/lenstool/lenstool}}, which performs a Bayesian analysis with an MCMC sampler to estimate the best fit and error on each parameter of the mass distribution. 
 
-The strong-lensing constraints used are the locations of multiple images found in HST and MUSE/VLT. More specifically we group them into 3 systems: (a) the 4 images of the quiescent galaxy hosting MRG0138-SN, (b) the 3 observed images of MRG0138-SN assumed at the same redshift, and (c) the diffuse arc-like structure identified in HST and confirmed as an [OII] emitter in the VLT/MUSE data (see previous section). The locations and redshifts used in the lens model are summarised in Table \ref{tab:mulimages}.
+The strong-lensing constraints used are the locations of multiple images found in HST and MUSE/VLT. More specifically we group them into 3 systems: (a) the 4 images of the quiescent galaxy hosting MRG0138-SN, (b) the 3 observed images of \SNABC assumed to be at the same redshift, and (c) the diffuse arc-like structure identified in HST and confirmed as an [O\textsc{ii}]$\lambda$3727 emitter in the VLT/MUSE datacube (see previous section). The image coordinates and redshifts used in the lens model are summarised in Table \ref{tab:mulimages}.
 
-\begin{table}[]
+\begin{table}[ht]
     \centering
-    \begin{tabular}{rccl}
+    \begin{tabular}{cccl}
      ID &   R.A. (deg) & Dec. (deg) & $z$ \\
      \midrule
 H1 & 24.5099018 & $-$21.9260130 & 1.95 \\
 H2 & 24.5132090 & $-$21.9299032 & 1.95 \\
 H3 & 24.5164138 & $-$21.9303172 & 1.95 \\
 H4 & 24.5176117 & $-$21.9233433 & 1.95 \\
+     \midrule
 SN1 & 24.5100753 & $-$21.9273418 & 1.95 \\
 SN2 & 24.5123198 & $-$21.9297875 & 1.95 \\
 SN3 & 24.5151253 & $-$21.9306659 & 1.95 \\
+     \midrule
 3.1 & 24.5169659 & $-$21.9234814 & 0.7663 \\
 3.2 & 24.5151039 & $-$21.9231406 & 0.7663 \\
 3.3 & 24.5184361 & $-$21.9264250 & 0.7663 \\
@@ -468,12 +702,12 @@ SN3 & 24.5151253 & $-$21.9306659 & 1.95 \\
     \label{tab:mulimages}
 \end{table}
 
-The cluster mass modelling is performed similarly to other massive strong lensing clusters observed with HST \cite{richard_mass_2014}. In summary, the total mass distribution is parametrised as a combination of multiple dPIE (double Pseudo Isothermal Elliptical) profiles describing both cluster-scale and galaxy-scale dark matter haloes. dPIE are elliptical isothermal profiles with both a core and a cut radius where the density flattens and drops respectively. In the case of MRG0138 the mass distribution is dominated by a single mass concentration centered on its Brightest Cluster Galaxy (BCG). We therefore use a single cluster-scale halo at a fixed cut radius of 1 Mpc.  We add a single galaxy-scale halo on each cluster member, where the shape parameters (halo center, ellipticity) are fixed to their measured HST morphology and their core radius is negligible (fixed at 0.15 kpc). Cluster members were identified by the combination of red sequence selection (based on the F814W-F160W color) and MUSE spectroscopy.
+The cluster mass modelling is performed similarly to other massive strong lensing clusters observed with HST \cite{richard_mass_2014}. In summary, the total mass distribution is parametrized as a combination of multiple dPIE (double Pseudo Isothermal Elliptical) profiles describing both cluster-scale and galaxy-scale dark matter haloes. dPIE are elliptical isothermal profiles with both a core and a cut radius where the density flattens and drops respectively. In the case of MRG0138 the mass distribution is dominated by a single mass concentration centered on its Brightest Cluster Galaxy (BCG). We therefore use a single cluster-scale halo at a fixed cut radius of 1\,Mpc.  We add a single galaxy-scale halo on each cluster member, where the shape parameters (halo center, ellipticity) are fixed to their measured HST morphology and their core radius is negligible (fixed at 0.15\,kpc). Cluster members were identified by the combination of red sequence selection (based on the F814W$-$F160W color) and MUSE spectroscopy.
 
 The majority of cluster members are elliptical galaxies selected from the red sequence, and to reduce the number of parameters we assume they follow the scaling relations: $\sigma=\sigma^*\ {\Big(\frac{L}{L^*}\Big)}^{(1/4)}$ for the velocity dispersion, 
 and $r_{\rm cut}=r_{\rm cut}^*\ {\Big(\frac{L}{L^*}\Big)}^{(1/2)}$, assuming the Faber-Jackson relation and a constant M/L ratio respectively. $\sigma^*$ and $r^*_{\rm cut}$ are model parameters for a cluster member at the characteristic luminosity $L^*$.  Following the discussion in \cite{richard_locuss_2010} we fix $\sigma^*=158$ km/s and $r_{\rm cut}^*$=45 kpc. 
 
-We individually optimise the $\sigma$ and $r_{\rm cut}$ parameters for 4 specific galaxies which are not expected to follow the aforementioned scaling relations: the BCG and three perturbers P1 to P3. These perturbers are either blue gas-stripped galaxies infalling into the cluster core, and/or located very close to the images of the quiescent galaxy, perturbing its apparent morphology with additional lensing. This choice of perturbers is similar to the ones used in the model by \cite{newman_resolving_2018}.
+We individually optimise the $\sigma$ and $r_{\rm cut}$ parameters for 4 specific galaxies which are not expected to follow the aforementioned scaling relations: the BCG and three perturbers P1 to P3. These perturbers are either blue gas-stripped galaxies infalling into the cluster core, and/or located very close to the images of the \SNABC host galaxy, perturbing its apparent morphology with additional lensing. This choice of perturbers is similar to the ones used in the model by \cite{newman_resolving_2018}.
 
 \lenstool optimises the parameters of the model by minimising the overall root mean square dispersion (RMS) between the predicted and observed locations of the multiple images. The best fit parameters of each mass component are provided in Table~\ref{tab:massmodel}. The error bars are derived from the MCMC models sampling their posterior probability distribution. 
 
@@ -483,11 +717,11 @@ The final model, and the one selected as the preferred model prior to unblinding
 The final \lenstool model E reproduces all multiple systems with an RMS of 0.15\arcsec. We also simulated the overall shape of the quiescent galaxy using the sum of two Sersic profiles, and check from the HST residuals that they reproduce the pixel-to-pixel morphology of the arcs. This model is then used to predict the magnification and time delays for the 3 observed images of \SNABC, as well as the location of the fourth  image, which is still to appear. The actual 1$\sigma$ uncertainty on this location is the ellipse overlayed on top of the bottom cutouts in Fig.~\ref{fig:layout}. As the lens model reproduces the location of the SN images within a small uncertainty, these predictions are computed with \lenstool using the barycenter of all source positions corresponding to images SN.1, SN.2 and SN.3 as the same reference source position. We summarise these predictions in Table \ref{tab:snpred}.
 
 
-\begin{table}[]
+\begin{table}[ht]
     \centering
     \begin{tabular}{c|c|c|c|c|c|c|c|}
     Potential & $\Delta$R.A. & $\Delta$Dec. & $e$ & $\theta$ & $\sigma$ & $r_{\rm core}$ & $r_{\rm cut}$ \\
-    & [2000.0] & [2000.0] & & [deg] & [km\ $s^{-1}$] & [kpc] & [kpc] \\
+    & [arcsec] & [arcsec] & & [deg] & [km\ $s^{-1}$] & [kpc] & [kpc] \\
 \hline
 Cluster-DM & $ -0.7^{+  0.4}_{ -0.4}$ & $ -1.2^{+  0.4}_{ -0.4}$ & $ 0.81^{+ 0.02}_{-0.13}$ & $114.9^{+  2.0}_{ -4.1}$ & $31^{+13}_{-12}$ & $[1000]$ & $446^{+52}_{-70}$ \\
 BCG            & $[  0.1]$ & $[ -0.1]$ & $[0.52]$ & $[-41.1]$ & $136^{+42}_{-32}$ & $[0.15]$ & $700^{+52}_{-57}$ \\
@@ -502,13 +736,13 @@ L$^{*}$ galaxy &           &           &          &           & $[45]$          
 %L$^{*}$ galaxy &  & & & & $[0.15]$ & $[45]$ & $[158]$\\
 \hline
     \end{tabular}
-    \caption{Best fit model parameters for the mass distribution. From left to right: mass component, dPIE center and global shape (ellipticity and orientation), velocity dispersion, core and cut radius. The final row 
+    \caption{Best fit model parameters for the mass distribution. From left to right: mass component, position relative to cluster center ($\Delta$R.A. and $\Delta$Dec.), dPIE shape (ellipticity and orientation), velocity dispersion, core and cut radius. The final row 
     is the generic galaxy mass at the characteristic luminosity L$^*$, which is scaled to match each of cluster member galaxies.  Parameters in square brackets are fixed {\it a priori} in the final model (version E). }
     \label{tab:massmodel}
 \end{table}
 
 
-\begin{table}[]
+\begin{table}[tb]
     \centering
     \begin{tabular}{c|l|l|c|c|}
     Image     & R.A. & Dec. & $\mu$ & $\Delta t$ \\
@@ -537,13 +771,13 @@ From this we can infer that the visibility time of the transient in the $z=1.95$
 Similarly, with expected magnifications in the vicinity of $\mu\sim10$, the measured apparent magnitudes near 23 AB mag translate to a rest-frame absolute magnitude near $M_B \sim-19.5$ mag (too bright to be a nova, luminous blue variable, or other low-luminosity stellar transient).
 Taken together, these indicators strongly suggest that the transient is a supernova (SN). 
 
-Although we have invoked the lens model in this analysis, note that the inferences are not strongly dependent on the specific lens model predictions.  To make the observed transient images consistent with a fast or low-luminosity transient, the time delays and/or magnifications would have to be changed by more than a factor of 2.  In the analysis to follow, we will work under the assumption that the transient is a SN. 
+Although we have invoked the lens model in this analysis, we note that the inferences are not strongly dependent on the specific lens model predictions.  To make the observed transient images consistent with a fast or low-luminosity transient, the time delays and/or magnifications would have to be changed by more than a factor of 2.  In the analysis to follow, we will work under the assumption that \SNABC is a SN. 
 
 
 \subsection*{SN Sub-Classification Based on Host Galaxy}
 With this transient identified as a SN, we now seek to identify the most likely SN type, under the assumption that it belongs to one of the three most common sub-classes (Ia, II, Ib/c).   We first use two methods that rely only on measured properties of the host galaxy to {\it circumstantially} infer the type. This inference is less strongly dependent on the lens model, helping to reduce any bias associated with a lens model-dependent classification. 
 
-Although Type Ia SNe are found in all types of galaxies, CCSNe are limited to galaxies with relatively young stellar populations.  We can therefore infer some information about the SN type using the observed host properties combined with knowledge of the relative rates of Type Ia and CCSNe in different stellar populations \cite{mannucci_rates_2005}.  In the case of the host galaxy MRG0138, we have a very well-constrained spectral energy distribution (SED) extending out to far-infrared wavelengths with Spitzer IRAC data \cite{newman_resolving_2018,newman_resolving_2018-1}.  
+Although Type Ia SNe are found in all types of galaxies, CCSNe are limited to galaxies with relatively young stellar populations.  We can therefore infer some information about the SN type using the observed host properties combined with knowledge of the relative rates of Type Ia and CCSNe in different stellar populations \cite{mannucci_supernova_2005}.  In the case of the host galaxy MRG0138, we have a very well-constrained spectral energy distribution (SED) extending out to far-infrared wavelengths with \textit{Spitzer} IRAC data \cite{newman_resolving_2018,newman_resolving_2018-1}.  
 From the SED fitting we derived the host galaxy's 
 rest-frame $B-K$ color and absolute magnitude, $M_K$, which serve as proxies for the stellar population age and have been empirically calibrated with SN rates in the local universe \cite{foley_classifying_2013}.  We adopt a lensing magnification correction using \lenstool model E to get $M_K$.  
 The $B-K$ color is not affected by the foreground lens.
@@ -551,7 +785,7 @@ Using the {\tt galsnid} method \cite{foley_classifying_2013} we
 derive a $75\%$ probability that \SNABC is of Type Ia (row a of Table \ref{tab:classification}).
 
 As an alternative host galaxy classification constraint, we use the derived properties of the host galaxy stellar population directly,  rather than adopting color and magnitude proxies. The MRG-M0138 galaxy has high mass ($\log_{10}(M/M_{\odot})=11.7$) but is a very quiescent galaxy, with a specific star formation rate of $\sim10^{-11.3}$ yr$^{-1}$  and a stellar population that is well-matched by an exponential star formation history with an age of $1.4$ Gyr \cite{newman_resolving_2018}. 
-The massive stars that end as CCSN explosions have main-sequence lifetimes of $\lesssim 40$ Myr \cite{smartt_progenitors_2009},  making it unlikely that CCSN progenitors make up a significant fraction of the MRG-M0138 stellar population---though the relatively high total stellar mass makes it possible that pockets of young stars are present.  We define classification probabilities based on the projected SN rate for each SN sub-class, derived from the host galaxy's stellar mass and star formation rate \cite{li_rates_2012}.  This yields a 62\% probability that \SNABC is of Type Ia (row b of Table~\ref{tab:classification}).
+The massive stars that end as CCSN explosions have main-sequence lifetimes of $<40$ Myr \cite{smartt_progenitors_2009},  making it unlikely that CCSN progenitors make up a significant fraction of the MRG-M0138 stellar population---though the high total stellar mass makes it possible that pockets of young stars are present.  We define classification probabilities based on the projected SN rate for each SN sub-class, derived from the host galaxy's stellar mass and star formation rate \cite{li_rates_2012}.  This yields a 62\% probability that \SNABC is of Type Ia (row b of Table~\ref{tab:classification}).
 
 \begin{table}[tb]
     \centering
@@ -559,10 +793,10 @@ The massive stars that end as CCSN explosions have main-sequence lifetimes of $\
         \multicolumn{1}{c}{Method} & \multicolumn{1}{c}{Data} & Lens info & Priors & p(Ia) & p(II) & p(Ib/c) \\
         \midrule
         a. Host color-mag & Host galaxy rest-frame $M_K$, $B-K$ & $\mu_{\rm host}$ & - & 0.75 & 0.19 & 0.06\\
-        b. Host stellar pop. & Host galaxy mass, star form. rate & $\mu_{\rm host}$ & - & 0.62 & 0.27 & 0.09 \\
+        b. Host stellar pop. & Host galaxy mass \& star formation rate & $\mu_{\rm host}$ & - & 0.62 & 0.27 & 0.09 \\
         %SN color-mag^{*}$ & SN F105W-F160W color, $m_{\rm F160W}$ & SN magnification & Host: stellar pop. & $0.95\pm0.03$ & $0.01\pm0.01$ & $0.04\pm0.04$\\
-        c. SN color-mag & SN color (Y-H), $m_{\rm F160W}$ & $\mu_{\rm SN}$ & b & 0.95 & 0.01 & 0.04\\
-        d. SN light curve & SN light curves (Y and H) & $\mu_{\rm SN}$, $\Delta t_{\rm SN}$ & b & 0.94 & 0.06 & $<$0.01 \\
+        c. SN color-mag & SN F105W-F160W color, $m_{\rm F160W}$ & $\mu_{\rm SN}$ & b & 0.95 & 0.01 & 0.04\\
+        d. SN light curve & F105W and F160W SN light curves & $\mu_{\rm SN}$, $\Delta t_{\rm SN}$ & b & 0.94 & 0.06 & $<$0.01 \\
     \end{tabular}
     %\tablenote{*}{Reported uncertainties reflect the range of classification probabilities derived separately from the three SN images.}
     \caption{SN classification probabilities. ``Lens info'' indicates the lensing information used to interpret or derive the 
@@ -575,7 +809,7 @@ The massive stars that end as CCSN explosions have main-sequence lifetimes of $\
 
 \begin{figure}
     \centering
-    \includegraphics{Paper/Figures/colormag_classification_supplement.pdf}
+    \includegraphics[width=0.9\textwidth]{Paper/Figures/colormag_classification_supplement.pdf}
     \caption{The position of \SNABC in color-magnitude space.
     Colored points show simulated photometry for normal SNe of Type Ia (red), TypeIb/Ic (gold), and Type II (green), with 10,000 simulated SN in each sub-class (not all apparent on this plot).  Histograms above and below show the marginalized distributions that have been rescaled to represent posterior probability density functions. They are normalized to integrate to unity, then multiplied by the SN sub-class priors based on the host galaxy stellar population (row b in Table~\ref{tab:classification}).  Open markers show the observed photometry of the SN. Dotted vertical lines mark the magnification correction based on \lenstool model E, terminating in closed markers with error bars that show the magnitude uncertainty.  Horizontal error bars in the upper panel indicate the observed uncertainty in 
     the SN color (not affected by lensing).  The relevant SN photometry markers are repeated in the histogram side-panels with arbitrary vertical positions.  All three SN images are located in regions of color-magnitude space that are expected to be dominated by Type Ia SN.}
@@ -588,7 +822,8 @@ Figure~\ref{fig:colormag_classification_supplement} illustrates the first approa
 We then compute the number of simulated SN within a rectangular region around each observed point. The width of this sampling region is set to 3 times the observed color uncertainty, and the height is equal to the lens-modeling magnification uncertainty.  We take the number of simulated SN for each type as an estimate of the likelihood that \SNABC belongs to that class. Multiplying by the prior probabilities derived from host galaxy properties, we finally derive the probability that the SN is of Type Ia as $p(Ia)=0.95$, 0.98, and 0.92 from the three SN images SN1, SN2 and SN3, respectively. Row c of Table~\ref{tab:classification} reports the mean of our three classification probabilities for each sub-class. 
 
 As a second photometric classification of this SN, we used the {\tt STARDUST2} Bayesian light curve classification tool \cite{rodney_type_2014}, which is also built on the underlying {\tt sncosmo} framework. Here we adopt both the predicted magnifications and time delays from the best lens model, which allows us to put the photometry from the three images together as a composite ``light curve'' and compare against simulated light curves.  {\tt STARDUST2} uses the {\it SALT2-extended} model to represent Type Ia SN \cite{guy_salt2:_2007, pierel_extending_2018} and a collection of 42  spectrophotometric time series templates to represent CCSN (27 Type II and 15 Type Ib/c).  These CCSN templates comprise all of the templates developed for the Supernova Analysis software {\tt SNANA} \cite{kessler_snana:_2009}, derived from the SN samples of the Sloan Digital Sky Survey \cite{frieman_sloan_2008,sako_sloan_2008, dandrea_type_2010}, Supernova Legacy Survey \cite{astier_supernova_2006}, and Carnegie Supernova Project \cite{hamuy_carnegie_2006, stritzinger_he-rich_2009, morrell_carnegie_2012}.  With {\tt STARDUST2} we use a nested sampling algorithm to measure likelihoods over the SN simulation parameter space.  
-Figure~\ref{fig:classification_lightcurves} shows the magnification- and time-delay-corrected photometry of \SNABC and the {\tt STARDUST2} maximum likelihood light curve fits from each of the three SN sub-classes considered (Ia, II, Ib/c). This figure shows that the limited photometric data can be reasonably well fit by at least one model from any of these three sub-classes. However, the range of model parameters that allow such a fit to the data is nuch more limited for the heterogeneous CCSN types than for the Type Ia class.   
+Figure~\ref{fig:classification_lightcurves} shows the magnification- and time-delay-corrected photometry of \SNABC and the {\tt STARDUST2} maximum likelihood light curve fits from each of the three SN sub-classes considered (Ia, II, Ib/c).
+This figure shows that the limited photometric data can be reasonably well fit by at least one model from any of these three sub-classes. However, the range of model parameters that allow such a fit to the data is much more limited for the heterogeneous CCSN types than for the Type Ia class.   
 To compute the posterior probability distribution we adopt priors for each of the three SN classes, again using the classification probabilities derived from the \SNABC host galaxy stellar population properties (row b of Table~\ref{tab:classification}). 
 Marginalizing the posterior  probability distributions over all free parameters, we find a 94\% probability that \SNABC is of Type Ia (row d of Table~\ref{tab:classification}).  
 
@@ -613,20 +848,28 @@ We constrain the relative time delays of \SNABC by using two separate methods to
 
 \subsubsection*{Color Curve Age Constraints}
 
-We first attempt to constrain the relative time delays using the color of each observed image, which is independent of the lens model and possible because the scenario of gravitation lensing is generally achromatic. One important caveat to this principle is that {\it microlensing} effects are not generally achromatic, because the microlensing caustics may cause differential magnification on the scale of the SN radius \cite{goldstein_precise_2018,foxley-marrable_impact_2018,bonvin_impact_2019}.  Hence, if the expanding SN shell has a color gradient then microlensing may introduce spurious features in the observed colors of the SN \cite{kochanek_quantitative_2004,vernardos_joint_2018}.   Goldstein et al. \cite{goldstein_precise_2018} found that such chromatic microlensing is most likely not present for lensed Type Ia SNe in the period up to about 25 rest-frame days after explosion ($\sim$15 observer days after peak brightness for \SNABC). Only image 2 is likely in the achromatic microlensing phase, but Goldstein et al. \cite{goldstein_precise_2018} found extremely small deviations in the rest-frame $U-V$ color curve due to microlensing at the 68\% confidence interval, and up to a $\sim0.2-0.4$ mag difference with 99\% confidence. While such extreme microlensing could alter the results for images 1 and 3, it would not alter the measurement of image 2 as it is likely in the achromatic phase.
+We first attempt to constrain the relative time delays using the color of each observed image, which is independent of the lens model and possible because the phenomenon of gravitational lensing is intrinsically achromatic. One important caveat to this principle is that {\it microlensing} effects are not generally achromatic, because the microlensing caustics may cause differential magnification on the scale of the SN radius \cite{goldstein_precise_2018,foxley-marrable_impact_2018,bonvin_impact_2019}.  Hence, if the expanding SN shell has a color gradient then microlensing may introduce spurious features in the observed colors of the SN \cite{kochanek_quantitative_2004,vernardos_joint_2018}.   Goldstein et al. \cite{goldstein_precise_2018} found that such chromatic microlensing is most likely not present for lensed Type Ia SNe in the period up to about 25 rest-frame days after explosion ($\sim$15 observer days after peak brightness for \SNABC). Only image 2 is likely in the achromatic microlensing phase, but Goldstein et al. \cite{goldstein_precise_2018} found extremely small deviations in the rest-frame $U-V$ color curve due to microlensing at the 68\% confidence interval, and up to a $\sim0.2-0.4$ mag difference with 99\% confidence. While such extreme microlensing could alter the results for images 1 and 3, it would not alter the measurement of image 2 as it is likely in the achromatic phase.
 
 We use version 2 of the SuperNova Time Delays (SNTD) package\footnote{The v2.0 release is at \href{https://github.com/jpierel14/sntd/releases/tag/2.0}{github.com/jpierel14/sntd/releases/tag/2.0} with documentation at 
-\href{https://sntd.readthedocs.io/en/latest/}{sntd.readthedocs.io}}, which has several improvements over the original SNTD package \cite{pierel_turning_2019}. The SNTD package employs a nested sampling algorithm within three separate methods to measure time delays, and is designed to fully utilize the information present in SN light curve templates \cite{hsiao_k_2007,guy_salt2:_2007,kessler_results_2010,pierel_extending_2018} to reduce the impacts of microlensing and make more accurate measurements. We use the "color" method present in SNTD, which attempts to reconstruct the intrinsic color curve using the SALT2 model as a template \cite{guy_salt2:_2007}. This method fits the age of each image simultaneously, while also varying the SN model parameters. The result of this process is seen in Figure \ref{fig:colorcurves}. Joint and marginalized posterior distributions
-from SNTD for SALT2 parameters and measured ages for each image are shown in Figure \ref{fig:corner_cfit}.  The measured colors intersect the model at two distinct locations for images 1 and 2 of \SNABC, meaning there are two plausible ages that cause a double peaked posterior distribution (Figure \ref{fig:corner_cfit}). This is caused by a model parameter degeneracy that could be broken in a way independent of the lens model if a sufficiently precise light curve of image 4 is obtained in the future.
+\href{https://sntd.readthedocs.io/en/latest/}{sntd.readthedocs.io}}, which has several improvements over the original SNTD package \cite{pierel_turning_2019}. The SNTD package employs a nested sampling algorithm within three separate methods to measure time delays, and is designed to fully utilize the information present in SN light curve templates \cite{hsiao_k_2007,guy_salt2:_2007,kessler_results_2010,pierel_extending_2018} to reduce the impacts of microlensing and make more accurate measurements. We use the "color" method present in SNTD, which attempts to reconstruct the intrinsic color curve using the SALT2 model as a template \cite{guy_salt2:_2007}. This method fits the age of each image simultaneously, while also varying the SN model parameters.  This means we are finding a single set of SN model parameters to describe the intrinsic photometric evolution of the SN, and also finding the age (time from peak brightness) for each of the three images.
+
+The result of this process is seen in Figure \ref{fig:colorcurves}.  Joint and marginalized posterior distributions
+from SNTD for the SALT2 SN model parameters and the measured ages for each image are shown in Figure \ref{fig:corner_cfit}.  The measured colors intersect the model at two distinct locations for images 1 and 2 of \SNABC, meaning there are two plausible ages---resulting in a double peaked posterior distribution (Fig. \ref{fig:corner_cfit}). This is caused by a model parameter degeneracy that could be broken in a way independent of the lens model if a sufficiently precise color curve of image 4 is obtained in the future.
 
 
 \subsubsection*{Light Curve + Lens Model Age Constraints}
 
-In order to break the age degeneracies in the color-based constraints today, we need to use some information about the relative brightnesses of the \SNABC images.  For this step we can no longer be independent of the lens models, as we must use the lens-model-predicted magnification values to de-magnify the observed magnitudes for comparison to SN models. 
+In order to break the age degeneracies in the color-based constraints using only data available today, we need to use some information about the relative brightnesses of the \SNABC images.  For this step we can no longer be independent of the lens models, as we must use the lens-model-predicted magnification values to de-magnify the observed photometry for comparison to SN models (note, however, that we again do not use any time delay information from the lens model for this method).
 
-For the five lens models described above, we correct the observed magnitude of each image using the predicted lensing magnification ($\mu$). Next we employ SNTD's ``series'' method, as it is most effective for sparse sampling, to attempt a reconstruction of the intrinsic SN light curve \cite{pierel_turning_2019}. Once again the age of each image is constrained simultaneously, while also varying the SN model parameters. At this stage we adopt weak priors on the intrinsic SNIa luminosity \cite{wang_determination_2006} and SNIa color \cite{mosher_cosmological_2014} to help break degeneracies in the light curve model, and obtain a second constraint on the age of each SN image (Figure \ref{fig:lightcurves}). 
+For the five lens models (A-E) described above, we correct the observed flux density of each image (in both F105W and F160W bands) using the predicted lensing magnification ($\mu$). Next we employ SNTD's ``series'' method, as it is most effective for sparse sampling, to attempt a reconstruction of the intrinsic SN light curve \cite{pierel_turning_2019}. Once again the age of each image is constrained simultaneously, while also varying the SN model parameters. At this stage we adopt weak priors on the intrinsic SNIa luminosity \cite{wang_determination_2006} and SNIa color \cite{mosher_cosmological_2014} to help break degeneracies in the light curve model, and obtain a second constraint on the age of each SN image (Fig. \ref{fig:lightcurves}). 
 
-After repeating this process for each of the five lens models, we use the Bayesian Evidence to determine a preferred lens model (Table \ref{tab:model_evidence}). Using a coarse sampling we find significant preference for models C and E over models A,B, and D (at $>3\sigma$), but no significant difference between models C and E (Table \ref{tab:model_evidence}). Using a finer sampling for these two models, we find that there is preference for model E over model C (at $\sim3.6\sigma$). We therefore adopt model E as our preferred model, and use the model E light curve constraints (Fig \ref{fig:corner_modelE}) to obtain joint posterior distributions with the lens-independent result from color-curve fitting (Figure \ref{fig:corner_combined}). 
+After repeating this process for each of the five lens models, we use the Bayesian Evidence to determine a preferred lens model (Table \ref{tab:model_evidence}). Using a coarse sampling we find significant preference for models C and E over models A,B, and D (at $>3\sigma$), but no significant difference between models C and E (Table \ref{tab:model_evidence}). Using a finer sampling for these two models, we find that there is preference for model E over model C (at $\sim3.6\sigma$).  This was also the model selected as the optimal lens model before unblinding, so we have reinforced the justification to adopt model E as our preferred model.
+
+%Figure \ref{fig:corner_modelE} shows our final constraints on the age of each SN image based on these simultaneous light curve fits to the magnification-corrected fluxes in F105W and F160W.   
+
+As our final method to incorporate the color and brightness information together, we use the color-based posterior probability distributions (Fig. \ref{fig:corner_cfit}) as the prior for 
+the light-curve based constraints. In this approach, we must use only a single photometric band for the light curve constraint, so that we are not ``double-counting'' the color information by simultaneously fitting to two bands together.  We adopt F160W as the single band, since it is close to the rest-frame V band, where the SALT2 SNIa model is very well constrained.  The joint posterior distributions from this method are shown in Figure \ref{fig:corner_combined}.  
+%As expected, these match very closely with the two-band light-curve-based fitting (Fig. \ref{fig:corner_modelE}). 
 
 
 % \begin{figure}[h!]
@@ -636,7 +879,7 @@ After repeating this process for each of the five lens models, we use the Bayesi
 %     \label{fig:lightcurve2}
 % \end{figure}
 
-\begin{table}[h]
+\begin{table}[ht]
 \begin{tabular}{crrrrrrr}
     
     
@@ -655,10 +898,10 @@ After repeating this process for each of the five lens models, we use the Bayesi
 
 \subsection*{Final Inferred Time Delays and the \SNABC Light Curve}
 
-Our final age constraints for each SN image are a joint posterior between the parameter estimates from color-curve fitting (lens model independent) and light curve fitting (lens model dependent), resulting in the final time delays and uncertainties reported in table \ref{tab:time_delays} of the main text. Using these measured time delays, we can create a reconstructed form of the intrinsic light curve (Figure \ref{fig:full_lightcurve}) and color curve (Figure \ref{fig:full_colorcurve}) of \SNABC.
+Our final age constraints for each SN image are a joint posterior between the parameter estimates from color-curve fitting (lens model independent) and light curve fitting (lens model dependent), resulting in the final time delays and uncertainties reported in table \ref{tab:time_delays} of the main text. Using these measured time delays, we can create a reconstructed form of the intrinsic light curve (Fig. \ref{fig:full_lightcurve}) and color curve (Fig. \ref{fig:full_colorcurve}) of \SNABC.
 
 
-The final posterior distributions for images 1 and 2 are extremely bi-modal due to a degeneracy that cannot be broken by single epoch photometry, corresponding to a double-peaked intrinsic luminosity posterior for \SNABC (Figure \ref{fig:corner_combined}). If this degeneracy can be broken with the precise photometry expected for the final image of Requiem, then the final time delay uncertainty for \SNABC could be below $0.1\%$.
+The final posterior distributions for images 1 and 2 are extremely bi-modal due to a degeneracy that cannot be broken by single epoch photometry, corresponding to a double-peaked intrinsic luminosity posterior for \SNABC (Fig. \ref{fig:corner_combined}). If this degeneracy can be broken with the precise photometry expected for the final image of Requiem, then the final time delay uncertainty for \SNABC could be below $0.1\%$.
 
 
 \begin{figure*}
@@ -669,6 +912,21 @@ The final posterior distributions for images 1 and 2 are extremely bi-modal due 
     \caption{Color-based age constraints for \SNABC image 1 (upper right), image 2 (upper right), and image 3 (bottom center), using the methodology outlined in the \textit{Color Curve Age Constraints} section. The upper panel of each figure shows the posterior for the age of each image from SNTD, using a prior on the SALT2 color parameter (c) based on known population characteristics of SNIa. The effect of adding this prior is slight, with no significant deviation from the best-fit value of c ($0.02^{+0.04}_{-0.05}$). The grey shaded region covers the 68\% confidence interval of the best-fit SALT2 color curve, with the median model shown as a solid line. The magenta shaded region shows the 1$\sigma$ range of the measured F105W-F160W color, which corresponds to a $U-V$ color in the rest-frame.}
     \label{fig:colorcurves}
 \end{figure*}
+
+
+
+\begin{figure*}
+    \centering
+    \includegraphics[width=0.9\textwidth]{Paper/Figures/corner_color_curve_fit_with_c_prior_labels.pdf}
+%    corner_color_curve_fit_with_c_prior.pdf}
+    \caption{The marginalized and joint posterior distributions for the color curve age constraints measured in this analysis. We use a weak prior on the SALT2 color parameter ($c$), and set the SALT2 stretch parameter ($x_1$) to 0. This method is fully independent of lens modeling.  The table in the upper right lists all 
+    priors, observations, and lens model information
+    used for SN age estimates in this work.  
+    Only the highlighted 
+    components were used for the constraints shown here.}
+    \label{fig:corner_cfit}
+\end{figure*}
+
 \begin{figure*}
     \centering
     \includegraphics[width=0.49\textwidth]{Paper/Figures/lightcurve_image1.pdf}
@@ -679,39 +937,40 @@ The final posterior distributions for images 1 and 2 are extremely bi-modal due 
 \end{figure*}
 
 
+%\begin{figure*}
+%    \centering
+%    \includegraphics[width=0.9\textwidth]{Paper/Figures/lc_modelH_corner_labels.pdf}
+%    \caption{The marginalized and joint posterior distributions for the light curve age constraints measured in this analysis. We use lens model E to de-magnify each image and fit the corrected apparent magnitudes. This fit includes weak priors on the absolute magnitude of a SNIa ($M_B$) and the SALT2 color parameter ($c$), and sets the SALT2 stretch parameter ($x_1$) to 0.
+%     The table in the upper right lists all 
+%    priors, observations, and lens model information
+%    used for SN age estimates in this work.  
+%    Only the highlighted 
+%    components were used for the constraints shown here.
+%    }
+%    \label{fig:corner_modelE}
+%\end{figure*}
 \begin{figure*}
     \centering
-    \includegraphics[width=0.9\textwidth]{Paper/Figures/lc_modelH_color_corner.pdf}
-%    corner_color_curve_fit_with_c_prior.pdf}
-    \caption{The marginalized and joint posterior distributions for the color curve age constraints measured in this analysis. We use a weak prior on the SALT2 color parameter ($c$), and set the SALT2 stretch parameter ($x_1$) to 0. This method is fully independent of lens modeling. }
-    \label{fig:corner_cfit}
-\end{figure*}
-\begin{figure*}
-    \centering
-    \includegraphics[width=0.9\textwidth]{Paper/Figures/lc_modelH_corner.pdf}
-    \caption{The marginalized and joint posterior distributions for the light curve age constraints measured in this analysis. We use lens model E to de-magnify each image and fit the corrected apparent magnitudes. This fit includes weak priors on the absolute magnitude of a SNIa ($M_B$) and the SALT2 color parameter ($c$), and sets the SALT2 stretch parameter ($x_1$) to 0.}
-    \label{fig:corner_modelE}
-\end{figure*}
-\begin{figure*}
-    \centering
-    \includegraphics[width=0.9\textwidth]{Paper/Figures/lc_modelH_color_corner.pdf}
+    \includegraphics[width=0.9\textwidth]{Paper/Figures/lc_modelH_color_corner_labels.pdf}
     \caption{The marginalized and joint posterior distributions for the final age constraints measured in this analysis. We use the color curve posterior as the prior for light curve fitting with lens model E, and include weak priors on the absolute magnitude of a SNIa ($M_B$) and the SALT2 color parameter ($c$), and set the SALT2 stretch parameter ($x_1$) to 0.}
     \label{fig:corner_combined}
 \end{figure*}
 
-\begin{figure}[h!]
+\begin{figure}[htp]
     \centering
     \includegraphics[width=\textwidth]{Paper/Figures/full_lightcurve.pdf}
     \caption{\label{fig:full_lightcurve}The reconstructed light curve for \SNABC. The grey shaded region covers the 68\% confidence interval of the best-fit SALT2 color curve, with the median model shown as a solid line. Observed photometric data are shown as colored markers.   The error bars on each data point represent the photometric +lens model magnification (y-dimension) and time delay (x-dimension) uncertainties. These constraints are obtained using the joint posterior of the color curve and light curve methods described above, and are dependent upon lens model E.}
 \end{figure}
-\begin{figure}[h!]
+\begin{figure}[hbp]
     \centering
     \includegraphics[width=\textwidth]{Paper/Figures/full_colorcurve_total.pdf}
     \caption{\label{fig:full_colorcurve} The reconstructed color curve for \SNABC, using best-fit lensing parameters. The grey shaded region covers the 68\% confidence interval of the best-fit SALT2 color curve, with the median model shown as a solid line. Observed photometry is shown as colored markers.  No magnification correction is needed to set the vertical position of each observed point, so error bars in the y direction represent only photometric uncertainty. The horizontal position is defined by the best-fit time delays reported in Table~1 of the main text, with error bars 
     representing the uncertainty in the final inferred time delays. }
 \end{figure}
-\clearpage
-\section*{References}
+
+%\clearpage
+%\section*{References}
+
 \end{document}
 
 
