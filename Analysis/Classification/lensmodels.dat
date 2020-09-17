@@ -1,0 +1,31 @@
+MODEL image MU ERR_MU TDELAY
+C SN.1 6.324 0.496 0.0
+C SN.2 9.526 1.075 180.3
+C SN.3 6.879 0.527 82.7
+C SN.4 0.800 0.117 7402.8
+D SN.1 6.281 0.527 0.0
+D SN.2 9.923 1.202 184.4
+D SN.3 7.472 0.629 85.3
+D SN.4 0.860 0.137 7034.9
+E SN.1 8.942 1.612 0.0
+E SN.2 18.480 3.776 103.6
+E SN.3 13.257 2.709 50.2
+E SN.4 1.137 0.294 5876.8
+F SN.1 8.699 1.346 0.0
+F SN.2 18.069 3.204 108.3
+F SN.3 12.719 2.324 53.7
+F SN.4 1.103 0.239 6020.5
+
+#
+# Preference for now for psf_flux fluxes from ePSF fitting, with uncertainty
+# fluxerr.  The `bkgflux` is a local background that has already been 
+# subtracted from the R=0.3" aperture `flux`.
+# The magnification estimates `mu` have not been applied to the photometry
+#
+# time band psf_flux apcorr flux fluxerr bkgflux zp zpsys id img   mu muerr dtA dtB dtC
+57588.03 f105w 0.0877 1.192 0.1311 0.0165 0.1902 23.9 ab  0  1.1  6.3  1.2    0   0   0
+57588.03 f105w 2.3471 1.192 2.6767 0.0160 0.2033 23.9 ab  1  1.2 11.4  4.9  242 280 160
+57588.03 f105w 0.1748 1.192 0.1922 0.0157 0.2776 23.9 ab  2  1.3  7.1  1.1  137 160  83
+57587.97 f160w 0.6113 1.262 0.6702 0.0433 0.7207 23.9 ab  0  1.1  6.3  1.2    0   0   0
+57587.97 f160w 3.5715 1.262 3.9274 0.0453 0.7528 23.9 ab  1  1.2 11.4  4.9  242 280 160
+57587.97 f160w 1.1265 1.262 1.2476 0.0442 1.2159 23.9 ab  2  1.3  7.1  1.1  137 160  83
