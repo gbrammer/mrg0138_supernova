@@ -6,6 +6,8 @@
 \#*\#
 commit.txt
 
+# Mac
+.DS_Store
 
 # Packages
 *.egg
