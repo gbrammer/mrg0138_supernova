@@ -1,6 +1,10 @@
 #! /usr/bin/env python
-from stardust2.stardust import classify
 
+#from stardust2.stardust import classify
+import sys
+sys.path.append('../../../starDust2')
+import stardust
+from stardust import classify
 from astropy.table import Table
 from copy import deepcopy
 import numpy as np
