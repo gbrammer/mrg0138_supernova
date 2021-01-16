@@ -20,13 +20,13 @@ photdatatable = """#
 # The magnification estimates `mu` have not been applied to the photometry
 # the time delay estimates 'dt' have not been applied to the dates
 #
-# time   band    flux  fluxerr zp zpsys snid img   mu   muerr    dt
-57588.03 f105w 0.0877  0.0165 23.9 ab     1  1.1  3.907 0.534   0.0
-57588.03 f105w 2.3471  0.0160 23.9 ab     2  1.2  7.381 3.044 101.4
-57588.03 f105w 0.1748  0.0157 23.9 ab     3  1.3  5.020 1.217  19.3
-57587.97 f160w 0.6113  0.0433 23.9 ab     1  1.1  3.907 0.534   0.0
-57587.97 f160w 3.5715  0.0453 23.9 ab     2  1.2  7.381 3.044 101.4
-57587.97 f160w 1.1265  0.0442 23.9 ab     3  1.3  5.020 1.217  19.3
+# time   band    flux  fluxerr zp zpsys snid img   mu   muerr    dt index
+57588.03 f105w 0.1748  0.0157 23.9 ab     1  1.1  5.020 1.217  19.3 0
+57588.03 f105w 2.3471  0.0160 23.9 ab     2  1.2  7.381 3.044 101.4 1
+57588.03 f105w 0.0877  0.0165 23.9 ab     3  1.3  3.907 0.534   0.0 2
+57587.97 f160w 1.1265  0.0442 23.9 ab     1  1.1  5.020 1.217  19.3 3
+57587.97 f160w 3.5715  0.0453 23.9 ab     2  1.2  7.381 3.044 101.4 4
+57587.97 f160w 0.6113  0.0433 23.9 ab     3  1.3  3.907 0.534   0.0 5
 """
 snphotdata = Table.read(photdatatable, format='ascii.commented_header',
                         header_start=-1)
