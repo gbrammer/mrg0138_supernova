@@ -56,7 +56,7 @@ def make_fig4():
     wsl = wcs.slice((sly, slx))
     hsl = utils.get_wcs_slice_header(wcs, slx, sly)
     
-    reg = pyregion.open('johan_allpot_adjust.reg').as_imagecoord(hsl)
+    reg = pyregion.open('mrg0138_supernova/Analysis/lensing/johan_allpot_adjust.reg').as_imagecoord(hsl)
     #reg_sky = pyregion.open('johan_allpot.reg').as_imagecoord(hsl)
     
     img = plt.imread('j013804m2156.lensmodel.on.png')
@@ -77,7 +77,8 @@ def make_fig4():
         
     for txt in artists:
         txt.set_zorder(100)
-        #ax.add_artist(txt)
+        if 0:
+            ax.add_artist(txt)
     
     ########## Labels
     coo = utils.read_catalog('coords.txt')
