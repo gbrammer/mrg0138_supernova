@@ -72,15 +72,16 @@ def rgb():
     
     xy = np.cast[int](np.round(wcs.all_world2pix(coo['ra'], coo['dec'], 0))).T
     
-    for i in [4,5,6,7]:
+    if 0:
+        for i in [4,5,6,7]:
         
-        xi, yi = xy[i]
-        slx = slice(xi-N, xi+N)
-        sly = slice(yi-N, yi+N)
+            xi, yi = xy[i]
+            slx = slice(xi-N, xi+N)
+            sly = slice(yi-N, yi+N)
         
-        _rgb = auto_script.field_rgb(root=root, filters=['f105w','f125w','f160w'], HOME_PATH=None, xyslice=(slx, sly), show_ir=False, add_labels=False, output_format='png', suffix='.on{0}'.format(coo['label'][i]), rgb_min=mi, tick_interval=inter, xsize=si/3.)
+            _rgb = auto_script.field_rgb(root=root, filters=['f105w','f125w','f160w'], HOME_PATH=None, xyslice=(slx, sly), show_ir=False, add_labels=False, output_format='png', suffix='.on{0}'.format(coo['label'][i]), rgb_min=mi, tick_interval=inter, xsize=si/3.)
 
-        _rgb = auto_script.field_rgb(root=root, filters=['f110w','f125w','f140w'], HOME_PATH=None, xyslice=(slx, sly), show_ir=False, add_labels=False, output_format='png', rgb_scl=[1.06,1,1.02], suffix='.off{0}'.format(coo['label'][i]), rgb_min=mi, tick_interval=inter, xsize=si/3.)
+            _rgb = auto_script.field_rgb(root=root, filters=['f110w','f125w','f140w'], HOME_PATH=None, xyslice=(slx, sly), show_ir=False, add_labels=False, output_format='png', rgb_scl=[1.06,1,1.02], suffix='.off{0}'.format(coo['label'][i]), rgb_min=mi, tick_interval=inter, xsize=si/3.)
         
     
     import matplotlib.pyplot as plt
@@ -133,6 +134,7 @@ def rgb():
     labels = 'bcdefghijk'
     
     iters = [6,5,4]
+    iters = [4,5,6]
     if ny == 4:
         iters += [7]
         
@@ -202,7 +204,7 @@ def rgb():
             a.plot(xreg, yreg, color=colors[7])
         
     gs.tight_layout(fig, pad=0.1)
-    fig.savefig('fig1_layout.pdf', dpi=150)   
+    fig.savefig('xfig1_layout.pdf', dpi=150)   
     plt.close('all')
         
 def phot_limits():
