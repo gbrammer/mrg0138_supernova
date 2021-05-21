@@ -42,11 +42,7 @@ def rgb():
     import numpy as np      
     
     from grizli import utils
-<<<<<<< HEAD
-=======
-
     plt.rcParams.update({'font.size':10})
->>>>>>> 8dafb3ee4ba770e7c3cd5c2541a900edcc2f58e2
     
     root = 'j013804m2156'
 
@@ -91,9 +87,9 @@ def rgb():
           
     
     # Label offsets
-    #      H1  H2 H3   H4 SN3 SN2  SN1  SN4   SN5 3.1 3.2 3.3 3.4
-    dx = [-30, 10, 0, -28,  0, 5,  -28, -27] + [0, 0, 0, -18, 0]
-    dy = [-8, 14, 10,  0,  10, 10, -15,  10] + [15, 15, 15, 0, 0]
+    #      H1  H2   H3   H4 SN3 SN2  SN1  SN4   SN5 3.1 3.2 3.3 3.4
+    dx = [-20, 10, -25, -28,-10, 5,  -40, -34] + [0, 0, 0, -18, 0]
+    dy = [ 13, 20,   10,  0,  10, 10, -15, 10] + [15, 15, 15, 0, 0]
         
     ny = 3
     ny = 4
@@ -133,7 +129,8 @@ def rgb():
         else:
             fs = 11
             
-        ax.text(xyi[i][0]+dx[i], sh[0]-xyi[i][1]+dy[i], coo['label'][i], ha='center', va='top',
+        ax.text(xyi[i][0]+dx[i], sh[0]-xyi[i][1]+dy[i], coo['label'][i], 
+                ha='center', va='top',
                 color=colors[i], fontsize=fs)
     
     labels = 'bcdefghijk'
