@@ -1,0 +1,9 @@
+| FILE                           	| TELESCOP	| INSTRUME	| FILTER  	| EXPTIME    |	
+| -------------------------------	| --------	| --------	| ------  	| -------    |	
+| j013804m2156-f105w_drz_sci.fits	| HST     	| WFC3    	| F105W   	|  3611      |	
+| j013804m2156-f110w_drz_sci.fits	| HST     	| WFC3    	| F110W   	|   705      |	
+| j013804m2156-f125w_drz_sci.fits	| HST     	| WFC3    	| F125W   	|   705      |	
+| j013804m2156-f140w_drz_sci.fits	| HST     	| WFC3    	| F140W   	|   705      |	
+| j013804m2156-f160w_drz_sci.fits	| HST     	| WFC3    	| F160W   	|  1611      |	
+| j013804m2156-ch1_drz_sci.fits  	| Spitzer 	| IRAC    	| ch1     	|  1371      |	
+| j013804m2156-ch2_drz_sci.fits  	| Spitzer 	| IRAC    	| ch2     	|  1460      |	
